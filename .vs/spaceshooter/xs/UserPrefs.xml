@@ -1,0 +1,36 @@
+﻿<Properties StartupConfiguration="{A4D7B93E-2024-7CC3-A11F-24CA182BFB09}|">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/scripts/Mover.cs">
+    <Files>
+      <File FileName="Assets/scripts/PlayerController.cs" Line="20" Column="34" />
+      <File FileName="Assets/scripts/PlaySoundOnStart.cs" Line="1" Column="1" />
+      <File FileName="Assets/scripts/Mover.cs" Line="1" Column="1" />
+      <File FileName="Assets/scripts/GameController.cs" Line="1" Column="1" />
+      <File FileName="Assets/scripts/DestroyByTime.cs" Line="1" Column="1" />
+      <File FileName="Assets/scripts/DestroyByContact.cs" Line="1" Column="1" />
+      <File FileName="Assets/scripts/DestroyByBoundary.cs" Line="1" Column="1" />
+      <File FileName="Assets/scripts/AudioScript2ndary.cs" Line="1" Column="1" />
+      <File FileName="Assets/scripts/AudioScript.cs" Line="1" Column="1" />
+      <File FileName="Assets/scripts/AsteroidRotate.cs" Line="1" Column="1" />
+    </Files>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State name="__root__">
+          <Node name="spaceshooter" expanded="True">
+            <Node name="Assets" expanded="True">
+              <Node name="scripts" expanded="True">
+                <Node name="Mover.cs" selected="True" />
+              </Node>
+            </Node>
+          </Node>
+        </State>
+      </Pad>
+    </Pads>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="75fba815-647f-4b7b-ad82-feb672523eb7" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MultiItemStartupConfigurations />
+</Properties>
