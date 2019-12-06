@@ -3,8 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class GameController : MonoBehaviour {
-
+public class GameController : MonoBehaviour
+{
     public GameObject hazard;
     public Vector3 spawnValues;
     public int hazardCount;
@@ -28,7 +28,7 @@ public class GameController : MonoBehaviour {
     IEnumerator SpawnWaves()
     {
         yield return new WaitForSeconds(startWait);
-        while(true)
+        while (true)
         {
             for (int i = 0; i < hazardCount; i++)
             {
@@ -39,7 +39,7 @@ public class GameController : MonoBehaviour {
             }
             yield return new WaitForSeconds(waveWait);
         }
-        
+
     }
 
     public void AddScore(int newScoreValue)
