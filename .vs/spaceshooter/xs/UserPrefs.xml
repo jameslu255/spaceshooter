@@ -1,25 +1,29 @@
-﻿<Properties StartupConfiguration="{28FCF307-BCEB-DF00-C466-08C29A16E02D}|">
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/scripts/GameController.cs">
+﻿<Properties StartupConfiguration="{A4D7B93E-2024-7CC3-A11F-24CA182BFB09}|">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/BasicBeamShot/Script/MultiShooter.cs">
     <Files>
       <File FileName="Assets/scripts/PlayerController.cs" Line="25" Column="1" />
-      <File FileName="Assets/scripts/PlaySoundOnStart.cs" Line="1" Column="1" />
-      <File FileName="Assets/scripts/Mover.cs" Line="1" Column="1" />
+      <File FileName="Assets/scripts/PlaySoundOnStart.cs" />
+      <File FileName="Assets/scripts/Mover.cs" />
       <File FileName="Assets/scripts/GameController.cs" Line="20" Column="17" />
-      <File FileName="Assets/scripts/DestroyByTime.cs" Line="1" Column="1" />
-      <File FileName="Assets/scripts/DestroyByContact.cs" Line="1" Column="1" />
-      <File FileName="Assets/scripts/DestroyByBoundary.cs" Line="1" Column="1" />
-      <File FileName="Assets/scripts/AudioScript2ndary.cs" Line="1" Column="1" />
-      <File FileName="Assets/scripts/AudioScript.cs" Line="19" Column="23" />
-      <File FileName="Assets/scripts/AsteroidRotate.cs" Line="1" Column="1" />
+      <File FileName="Assets/scripts/DestroyByTime.cs" />
+      <File FileName="Assets/scripts/DestroyByContact.cs" />
+      <File FileName="Assets/scripts/DestroyByBoundary.cs" />
+      <File FileName="Assets/scripts/AudioScript2ndary.cs" />
+      <File FileName="Assets/scripts/AudioScript.cs" />
+      <File FileName="Assets/scripts/AsteroidRotate.cs" />
+      <File FileName="Assets/BasicBeamShot/Script/MultiShooter.cs" Line="1" Column="1" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
           <Node name="spaceshooter" expanded="True">
             <Node name="Assets" expanded="True">
-              <Node name="scripts" expanded="True">
-                <Node name="GameController.cs" selected="True" />
+              <Node name="BasicBeamShot" expanded="True">
+                <Node name="Script" expanded="True">
+                  <Node name="MultiShooter.cs" selected="True" />
+                </Node>
               </Node>
+              <Node name="scripts" expanded="True" />
             </Node>
           </Node>
         </State>
@@ -28,7 +32,7 @@
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="b8191bcb-b604-49bb-a893-69447d94f350" />
+  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="42aa264a-4edf-47f2-8f60-89410fbc80cd" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>

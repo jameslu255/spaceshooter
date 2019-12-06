@@ -24,10 +24,10 @@ public class MultiShooter : MonoBehaviour {
         {
             Bullet = Shot1;
             //Fire
-            GameObject s1 = (GameObject)Instantiate(Bullet, this.transform.position, this.transform.rotation);
+            GameObject s1 = (GameObject)Instantiate(Bullet, this.transform.position, Quaternion.Euler(new Vector3(90, 0, 0)));
             s1.GetComponent<BeamParam>().SetBeamParam(this.GetComponent<BeamParam>());
             
-            GameObject wav = (GameObject)Instantiate(Wave, this.transform.position, this.transform.rotation);
+            GameObject wav = (GameObject)Instantiate(Wave, this.transform.position, Quaternion.Euler(new Vector3(90, 0, 0)));
             wav.transform.localScale *= 0.25f;
             wav.transform.Rotate(Vector3.left, 90.0f);
             wav.GetComponent<BeamWave>().col = this.GetComponent<BeamParam>().BeamColor;
@@ -38,13 +38,13 @@ public class MultiShooter : MonoBehaviour {
         //create GeroBeam
         if (Input.GetButtonDown("Fire2"))
         {
-            GameObject wav = (GameObject)Instantiate(Wave, this.transform.position, this.transform.rotation);
+            GameObject wav = (GameObject)Instantiate(Wave, this.transform.position, Quaternion.Euler(new Vector3(90, 0, 0)));
             wav.transform.Rotate(Vector3.left, 90.0f);
             wav.GetComponent<BeamWave>().col = this.GetComponent<BeamParam>().BeamColor;
 
             Bullet = Shot2;
             //Fire
-            NowShot = (GameObject)Instantiate(Bullet, this.transform.position, this.transform.rotation);
+            NowShot = (GameObject)Instantiate(Bullet, this.transform.position, Quaternion.Euler(new Vector3(90, 0, 0)));
         }
             //it's Not "GetButtonDown"
         if (Input.GetButton ("Fire2"))
