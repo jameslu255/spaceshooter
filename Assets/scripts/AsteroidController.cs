@@ -21,4 +21,5 @@ public class AsteroidController : MonoBehaviour
         var asteroidCollider = GetComponent<CapsuleCollider>();
         Physics.IgnoreCollision(playerBoundaryCollider, asteroidCollider);
     }
+
 }

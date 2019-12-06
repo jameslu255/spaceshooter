@@ -91,14 +91,13 @@
     <Compile Include="Assets\BasicBeamShot\Script\ShotParticle_Scale.cs" />
     <Compile Include="Assets\SimpleParticlePack\Scripts\ParticleTester.cs" />
     <Compile Include="Assets\scripts\AsteroidController.cs" />
-    <Compile Include="Assets\scripts\AsteroidRotate.cs" />
     <Compile Include="Assets\scripts\AudioScript.cs" />
     <Compile Include="Assets\scripts\AudioScript2ndary.cs" />
     <Compile Include="Assets\scripts\DestroyByBoundary.cs" />
     <Compile Include="Assets\scripts\DestroyByContact.cs" />
     <Compile Include="Assets\scripts\DestroyByTime.cs" />
     <Compile Include="Assets\scripts\GameController.cs" />
-    <Compile Include="Assets\scripts\Mover.cs" />
+    <Compile Include="Assets\scripts\PirateController.cs" />
     <Compile Include="Assets\scripts\PlaySoundOnStart.cs" />
     <Compile Include="Assets\scripts\PlayerController.cs" />
     <None Include="Assets\BasicBeamShot\sh\BeamLine_sh.shader" />
