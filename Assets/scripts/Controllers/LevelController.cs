@@ -19,8 +19,8 @@ public class LevelController : MonoBehaviour
     {
         StartCoroutine(StartDelay(LevelStartDelay));
         StartCoroutine(SpawnCornerDroids());
-        //StartCoroutine(SpawnAsteroids());
-        //StartCoroutine(SpawnDroids());
+        StartCoroutine(SpawnAsteroids());
+        StartCoroutine(SpawnDroids());
     }
 
     IEnumerator SpawnAsteroids()
@@ -99,11 +99,11 @@ public class LevelController : MonoBehaviour
         Level = newLevel;
 
         // TODO: Change parameters based on the level here.
-        AsteroidCount = 40;
+        AsteroidCount = 30;
         UnitSpawnDelay = 0.05f;
         LevelStartDelay = 1f;
         WaveDelay = 4f;
-        WaveCount = 10;
-        DroidCount = 4;
+        WaveCount = 8;
+        DroidCount = 3;
     }
 }
