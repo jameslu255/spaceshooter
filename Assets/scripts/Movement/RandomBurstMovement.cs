@@ -12,6 +12,10 @@ public class RandomBurstMovement : MovementBase
 
     protected override void Move()
     {
+        if (!Rb)
+        {
+            return;
+        }
         var newPosition = new Vector3
         {
             x = Rb.position.x + Random.Range(9f, 15f) * Time.deltaTime * DirectionX,

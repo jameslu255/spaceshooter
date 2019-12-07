@@ -89,11 +89,13 @@
     <Compile Include="Assets\BasicBeamShot\Script\ShotBase.cs" />
     <Compile Include="Assets\BasicBeamShot\Script\ShotParticleEmitter.cs" />
     <Compile Include="Assets\BasicBeamShot\Script\ShotParticle_Scale.cs" />
-    <Compile Include="Assets\Scripts\AsteroidController.cs" />
     <Compile Include="Assets\Scripts\AudioScript.cs" />
     <Compile Include="Assets\Scripts\AudioScript2ndary.cs" />
-    <Compile Include="Assets\Scripts\DroidController.cs" />
-    <Compile Include="Assets\Scripts\GameController.cs" />
+    <Compile Include="Assets\Scripts\Controllers\AsteroidController.cs" />
+    <Compile Include="Assets\Scripts\Controllers\DroidController.cs" />
+    <Compile Include="Assets\Scripts\Controllers\GameController.cs" />
+    <Compile Include="Assets\Scripts\Controllers\LevelController.cs" />
+    <Compile Include="Assets\Scripts\Controllers\PlayerController.cs" />
     <Compile Include="Assets\Scripts\Movement\BasicMovement.cs" />
     <Compile Include="Assets\Scripts\Movement\CornerMovement.cs" />
     <Compile Include="Assets\Scripts\Movement\HorizontalMovement.cs" />
@@ -103,7 +105,6 @@
     <Compile Include="Assets\Scripts\Movement\VerticalMovement.cs" />
     <Compile Include="Assets\Scripts\Movement\ZigZagMovement.cs" />
     <Compile Include="Assets\Scripts\PlaySoundOnStart.cs" />
-    <Compile Include="Assets\Scripts\PlayerController.cs" />
     <Compile Include="Assets\SimpleParticlePack\Scripts\ParticleTester.cs" />
     <None Include="Assets\BasicBeamShot\sh\BeamLine_sh.shader" />
     <None Include="Assets\BasicBeamShot\HowToUse_EN.txt" />

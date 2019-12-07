@@ -10,6 +10,10 @@ public class SpiralMovement : MovementBase
 
     protected override void Move()
     {
+        if (!Rb)
+        {
+            return;
+        }
         Angle += RotationalSpeed * Time.deltaTime;
         var offset = new Vector3(Mathf.Sin(Angle), 0, Mathf.Cos(Angle)) * Radius * Time.deltaTime;
         Rb.position = Rb.position + offset;

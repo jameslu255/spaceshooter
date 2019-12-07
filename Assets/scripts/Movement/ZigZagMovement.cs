@@ -9,6 +9,10 @@ public class ZigZagMovement : MovementBase
 
     protected override void Move()
     {
+        if (!Rb)
+        {
+            return;
+        }
         var newPosition = new Vector3
         {
             x = Rb.position.x + AmplitudeX * Time.deltaTime * DirectionX,

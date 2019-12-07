@@ -17,8 +17,17 @@ public abstract class MovementBase : MonoBehaviour
 
     protected void Start()
     {
+        var Player = GameObject.Find("Player");
+        if (Player)
+        {
+            PlayerRb = Player.GetComponent<Rigidbody>();
+        }
+        else
+        {
+            PlayerRb = null;
+        }
+
         PlayerBoundary = GameObject.Find("PlayerBoundary").GetComponent<BoxCollider>();
-        PlayerRb = GameObject.Find("Player").GetComponent<Rigidbody>();
         Rb = GetComponent<Rigidbody>();
         InitVelocity();
         RandomizeParameters();

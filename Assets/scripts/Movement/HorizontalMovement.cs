@@ -8,6 +8,10 @@ public class HorizontalMovement : MovementBase
 
     protected override void Move()
     {
+        if (!Rb)
+        {
+            return;
+        }
         var newPosition = new Vector3
         {
             x = Rb.position.x + Amplitude * Time.deltaTime * DirectionX,

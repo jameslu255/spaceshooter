@@ -9,6 +9,10 @@ public class CornerMovement : MovementBase
 
     protected override void Move()
     {
+        if (!Rb)
+        {
+            return;
+        }
         Rb.position = new Vector3(X, Rb.position.y, Z);
     }
 

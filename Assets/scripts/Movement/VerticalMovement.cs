@@ -8,6 +8,10 @@ public class VerticalMovement : MovementBase
 
     protected override void Move()
     {
+        if (!Rb)
+        {
+            return;
+        }
         var newPosition = new Vector3
         {
             z = Rb.position.z + Amplitude * Time.deltaTime * DirectionZ,
