@@ -1,13 +1,10 @@
 ﻿<Properties StartupConfiguration="{A4D7B93E-2024-7CC3-A11F-24CA182BFB09}|">
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/PlayerController.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/Movement/MovementBase.cs">
     <Files>
-      <File FileName="Assets/scripts/PlayerController.cs" Line="58" Column="1" />
-      <File FileName="Assets/scripts/AsteroidController.cs" Line="14" Column="88" />
-      <File FileName="Assets/scripts/GameController.cs" Line="54" Column="14" />
-      <File FileName="Assets/scripts/DestroyByBoundary.cs" />
-      <File FileName="Assets/scripts/DestroyByContact.cs" Line="1" Column="1" />
-      <File FileName="Assets/Scripts/AudioScript.cs" Line="1" Column="1" />
-      <File FileName="Assets/Scripts/DroidController.cs" Line="5" Column="19" />
+      <File FileName="Assets/scripts/GameController.cs" Line="48" Column="60" />
+      <File FileName="Assets/Scripts/DroidController.cs" Line="39" Column="56" />
+      <File FileName="Assets/Scripts/Movement/MovementBase.cs" Line="60" Column="1" />
+      <File FileName="Assets/Scripts/Movement/SpiralMovement.cs" Line="8" Column="42" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
@@ -18,7 +15,9 @@
                 <Node name="Script" expanded="True" />
               </Node>
               <Node name="Scripts" expanded="True">
-                <Node name="PlayerController.cs" selected="True" />
+                <Node name="Movement" expanded="True">
+                  <Node name="MovementBase.cs" selected="True" />
+                </Node>
               </Node>
             </Node>
           </Node>
@@ -28,7 +27,7 @@
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="069022e5-2fb6-4c47-a965-bd77335ecd49" />
+  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="0dd6637c-b6c6-4d7f-9ac3-0beaac8410ce" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>

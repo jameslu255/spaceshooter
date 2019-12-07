@@ -30,7 +30,7 @@ public class GameController : MonoBehaviour
         score = 0;
         MusicSource.clip = MusicClip;
         MusicSource.Play();
-        StartCoroutine(SpawnWaves());
+        //StartCoroutine(SpawnWaves());
         StartCoroutine(SpawnDroids());
     }
 

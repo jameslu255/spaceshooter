@@ -5,19 +5,38 @@ using UnityEngine;
 public class DroidController : MonoBehaviour
 {
     [SerializeField] private float Speed;
-    private float ElapsedTime;
+    private BoxCollider PlayerBoundary;
+    private GameObject Player; 
+    private Rigidbody Rb;
+
+    // Circular movement.
+    private float RotationalSpeed = 3f;
+    private float Radius = 25f;
+    private float Angle;
+
+    // Linear movement.
     private float Amplitude = 10f;
     private int DirectionX = -1;
     private int DirectionZ = -1;
-    private Rigidbody Rb;
-    private BoxCollider PlayerBoundary;
+
 
     private void Start()
     {
+        Player = GameObject.Find("Player");
         PlayerBoundary = GameObject.Find("PlayerBoundary").GetComponent<BoxCollider>();
         Rb = GetComponent<Rigidbody>();
         IgnorePlayerBoundaryCollider();
         Rb.velocity = transform.forward * Speed;
+
+        // Randomize parameters for circular movement.
+        int[] tempArray = { -1, 1 };
+        Angle = Random.Range(0f, 360f);
+        RotationalSpeed = Random.Range(2f, 5f) * tempArray[Random.Range(0, 2)];
+
+        // Randomize parameters for linear movement.
+        Amplitude = Random.Range(5f, 15f);
+
+        this.gameObject.AddComponent<SpiralMovement>();
     }
 
     private void IgnorePlayerBoundaryCollider()
@@ -27,19 +46,40 @@ public class DroidController : MonoBehaviour
         Physics.IgnoreCollision(playerBoundaryCollider, asteroidCollider);
     }
 
-    private void FixedUpdate()
-    {
-        ZigZagMovement();
-    }
-
     private void ZigZagMovement()
     {
         var newPosition = new Vector3();
         newPosition.x = Rb.position.x + Amplitude * Time.deltaTime * DirectionX;
         newPosition.z = Rb.position.z + Amplitude * Time.deltaTime * DirectionZ;
         newPosition.y = Rb.position.y;
+        Rb.position = newPosition;
+        CheckBoundary();
+    }
 
-        ElapsedTime += Time.deltaTime;
+    private void SpiralMovement()
+    {
+        Angle += RotationalSpeed * Time.deltaTime;
+        var offset = new Vector3(Mathf.Sin(Angle), 0, Mathf.Cos(Angle)) * Radius * Time.deltaTime;
+        Rb.position = Rb.position + offset;
+        CheckBoundary();
+    }
+
+    private void HorizontalMovement()
+    {
+        var newPosition = new Vector3();
+        newPosition.x = Rb.position.x + Amplitude * Time.deltaTime * DirectionX;
+        newPosition.y = Rb.position.y;
+        newPosition.z = Rb.position.z;
+        Rb.position = newPosition;
+        CheckBoundary();
+    }
+
+    private void VerticalMovement()
+    {
+        var newPosition = new Vector3();
+        newPosition.z = Rb.position.z + Amplitude * Time.deltaTime * DirectionZ;
+        newPosition.y = Rb.position.y;
+        newPosition.x = Rb.position.x;
         Rb.position = newPosition;
         CheckBoundary();
     }
