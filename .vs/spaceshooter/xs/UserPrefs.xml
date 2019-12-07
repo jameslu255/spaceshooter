@@ -1,10 +1,12 @@
 ﻿<Properties StartupConfiguration="{A4D7B93E-2024-7CC3-A11F-24CA182BFB09}|">
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/Movement/MovementBase.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/Movement/ZigZagMovement.cs">
     <Files>
       <File FileName="Assets/scripts/GameController.cs" Line="48" Column="60" />
-      <File FileName="Assets/Scripts/DroidController.cs" Line="39" Column="56" />
+      <File FileName="Assets/Scripts/DroidController.cs" />
       <File FileName="Assets/Scripts/Movement/MovementBase.cs" Line="60" Column="1" />
-      <File FileName="Assets/Scripts/Movement/SpiralMovement.cs" Line="8" Column="42" />
+      <File FileName="Assets/Scripts/Movement/SpiralMovement.cs" Line="20" Column="6" />
+      <File FileName="Assets/Scripts/Movement/VerticalMovement.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/Movement/ZigZagMovement.cs" Line="5" Column="31" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
@@ -16,7 +18,7 @@
               </Node>
               <Node name="Scripts" expanded="True">
                 <Node name="Movement" expanded="True">
-                  <Node name="MovementBase.cs" selected="True" />
+                  <Node name="ZigZagMovement.cs" selected="True" />
                 </Node>
               </Node>
             </Node>
@@ -27,7 +29,7 @@
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="0dd6637c-b6c6-4d7f-9ac3-0beaac8410ce" />
+  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="a5ebb6df-cbeb-4b1c-bd04-8e2b47e9d71e" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>

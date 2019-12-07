@@ -36,7 +36,7 @@ public class DroidController : MonoBehaviour
         // Randomize parameters for linear movement.
         Amplitude = Random.Range(5f, 15f);
 
-        this.gameObject.AddComponent<SpiralMovement>();
+        this.gameObject.AddComponent<ZigZagMovement>();
     }
 
     private void IgnorePlayerBoundaryCollider()
@@ -52,34 +52,6 @@ public class DroidController : MonoBehaviour
         newPosition.x = Rb.position.x + Amplitude * Time.deltaTime * DirectionX;
         newPosition.z = Rb.position.z + Amplitude * Time.deltaTime * DirectionZ;
         newPosition.y = Rb.position.y;
-        Rb.position = newPosition;
-        CheckBoundary();
-    }
-
-    private void SpiralMovement()
-    {
-        Angle += RotationalSpeed * Time.deltaTime;
-        var offset = new Vector3(Mathf.Sin(Angle), 0, Mathf.Cos(Angle)) * Radius * Time.deltaTime;
-        Rb.position = Rb.position + offset;
-        CheckBoundary();
-    }
-
-    private void HorizontalMovement()
-    {
-        var newPosition = new Vector3();
-        newPosition.x = Rb.position.x + Amplitude * Time.deltaTime * DirectionX;
-        newPosition.y = Rb.position.y;
-        newPosition.z = Rb.position.z;
-        Rb.position = newPosition;
-        CheckBoundary();
-    }
-
-    private void VerticalMovement()
-    {
-        var newPosition = new Vector3();
-        newPosition.z = Rb.position.z + Amplitude * Time.deltaTime * DirectionZ;
-        newPosition.y = Rb.position.y;
-        newPosition.x = Rb.position.x;
         Rb.position = newPosition;
         CheckBoundary();
     }
