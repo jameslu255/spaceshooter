@@ -92,12 +92,10 @@
     <Compile Include="Assets\Scripts\AsteroidController.cs" />
     <Compile Include="Assets\Scripts\AudioScript.cs" />
     <Compile Include="Assets\Scripts\AudioScript2ndary.cs" />
-    <Compile Include="Assets\Scripts\DestroyByBoundary.cs" />
-    <Compile Include="Assets\Scripts\DestroyByContact.cs" />
-    <Compile Include="Assets\Scripts\DestroyByTime.cs" />
     <Compile Include="Assets\Scripts\DroidController.cs" />
     <Compile Include="Assets\Scripts\GameController.cs" />
     <Compile Include="Assets\Scripts\Movement\BasicMovement.cs" />
+    <Compile Include="Assets\Scripts\Movement\CornerMovement.cs" />
     <Compile Include="Assets\Scripts\Movement\HorizontalMovement.cs" />
     <Compile Include="Assets\Scripts\Movement\MovementBase.cs" />
     <Compile Include="Assets\Scripts\Movement\RandomBurstMovement.cs" />

@@ -30,7 +30,7 @@ public class GameController : MonoBehaviour
         score = 0;
         MusicSource.clip = MusicClip;
         MusicSource.Play();
-        StartCoroutine(SpawnWaves());
+        //StartCoroutine(SpawnWaves());
         StartCoroutine(SpawnDroids());
     }
 
@@ -62,7 +62,7 @@ public class GameController : MonoBehaviour
                 Quaternion spawnRotation = Quaternion.Euler(new Vector3(270, 0, 0));
                 var droid = Instantiate(Droid, spawnPosition, spawnRotation);
                 droid.GetComponent<DroidController>().RemoveAllMovementTypes();
-                droid.AddComponent<RandomBurstMovement>();
+                droid.AddComponent<CornerMovement>();
                 yield return new WaitForSeconds(spawnWait);
             }
             yield return new WaitForSeconds(waveWait);

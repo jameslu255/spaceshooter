@@ -1,14 +1,15 @@
 ﻿<Properties StartupConfiguration="{A4D7B93E-2024-7CC3-A11F-24CA182BFB09}|">
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/Movement/VerticalMovement.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/Movement/CornerMovement.cs">
     <Files>
       <File FileName="Assets/Scripts/Movement/MovementBase.cs" Line="9" Column="21" />
-      <File FileName="Assets/Scripts/GameController.cs" Line="71" Column="1" />
+      <File FileName="Assets/Scripts/GameController.cs" Line="38" Column="29" />
       <File FileName="Assets/Scripts/DroidController.cs" Line="38" Column="65" />
       <File FileName="Assets/Scripts/Movement/ZigZagMovement.cs" Line="24" Column="42" />
       <File FileName="Assets/Scripts/Movement/RandomBurstMovement.cs" Line="13" Column="35" />
       <File FileName="Assets/Scripts/Movement/SpiralMovement.cs" Line="1" Column="1" />
       <File FileName="Assets/Scripts/Movement/HorizontalMovement.cs" Line="1" Column="1" />
       <File FileName="Assets/Scripts/Movement/VerticalMovement.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/Movement/CornerMovement.cs" Line="5" Column="43" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
@@ -20,7 +21,7 @@
               </Node>
               <Node name="Scripts" expanded="True">
                 <Node name="Movement" expanded="True">
-                  <Node name="VerticalMovement.cs" selected="True" />
+                  <Node name="CornerMovement.cs" selected="True" />
                 </Node>
               </Node>
             </Node>
