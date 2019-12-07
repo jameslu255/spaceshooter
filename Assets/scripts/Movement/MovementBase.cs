@@ -6,7 +6,7 @@ public abstract class MovementBase : MonoBehaviour
 {
     [SerializeField] protected float Speed;
     protected BoxCollider PlayerBoundary;
-    protected GameObject Player;
+    protected Rigidbody PlayerRb;
     protected Rigidbody Rb;
     protected int DirectionX = -1;
     protected int DirectionZ = -1;
@@ -18,7 +18,7 @@ public abstract class MovementBase : MonoBehaviour
     protected void Start()
     {
         PlayerBoundary = GameObject.Find("PlayerBoundary").GetComponent<BoxCollider>();
-        Player = GameObject.Find("Player");
+        PlayerRb = GameObject.Find("Player").GetComponent<Rigidbody>();
         Rb = GetComponent<Rigidbody>();
         InitVelocity();
         RandomizeParameters();

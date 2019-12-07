@@ -8,10 +8,12 @@ public class VerticalMovement : MovementBase
 
     protected override void Move()
     {
-        var newPosition = new Vector3();
-        newPosition.z = Rb.position.z + Amplitude * Time.deltaTime * DirectionZ;
-        newPosition.y = Rb.position.y;
-        newPosition.x = Rb.position.x;
+        var newPosition = new Vector3
+        {
+            z = Rb.position.z + Amplitude * Time.deltaTime * DirectionZ,
+            y = Rb.position.y,
+            x = Rb.position.x
+        };
         Rb.position = newPosition;
         CheckBoundary();
     }

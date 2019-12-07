@@ -97,8 +97,10 @@
     <Compile Include="Assets\Scripts\DestroyByTime.cs" />
     <Compile Include="Assets\Scripts\DroidController.cs" />
     <Compile Include="Assets\Scripts\GameController.cs" />
+    <Compile Include="Assets\Scripts\Movement\BasicMovement.cs" />
     <Compile Include="Assets\Scripts\Movement\HorizontalMovement.cs" />
     <Compile Include="Assets\Scripts\Movement\MovementBase.cs" />
+    <Compile Include="Assets\Scripts\Movement\RandomBurstMovement.cs" />
     <Compile Include="Assets\Scripts\Movement\SpiralMovement.cs" />
     <Compile Include="Assets\Scripts\Movement\VerticalMovement.cs" />
     <Compile Include="Assets\Scripts\Movement\ZigZagMovement.cs" />

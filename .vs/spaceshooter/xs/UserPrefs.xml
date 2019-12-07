@@ -1,12 +1,14 @@
 ﻿<Properties StartupConfiguration="{A4D7B93E-2024-7CC3-A11F-24CA182BFB09}|">
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/Movement/ZigZagMovement.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/Movement/VerticalMovement.cs">
     <Files>
-      <File FileName="Assets/scripts/GameController.cs" Line="48" Column="60" />
-      <File FileName="Assets/Scripts/DroidController.cs" />
-      <File FileName="Assets/Scripts/Movement/MovementBase.cs" Line="60" Column="1" />
-      <File FileName="Assets/Scripts/Movement/SpiralMovement.cs" Line="20" Column="6" />
+      <File FileName="Assets/Scripts/Movement/MovementBase.cs" Line="9" Column="21" />
+      <File FileName="Assets/Scripts/GameController.cs" Line="71" Column="1" />
+      <File FileName="Assets/Scripts/DroidController.cs" Line="38" Column="65" />
+      <File FileName="Assets/Scripts/Movement/ZigZagMovement.cs" Line="24" Column="42" />
+      <File FileName="Assets/Scripts/Movement/RandomBurstMovement.cs" Line="13" Column="35" />
+      <File FileName="Assets/Scripts/Movement/SpiralMovement.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/Movement/HorizontalMovement.cs" Line="1" Column="1" />
       <File FileName="Assets/Scripts/Movement/VerticalMovement.cs" Line="1" Column="1" />
-      <File FileName="Assets/Scripts/Movement/ZigZagMovement.cs" Line="5" Column="31" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
@@ -18,7 +20,7 @@
               </Node>
               <Node name="Scripts" expanded="True">
                 <Node name="Movement" expanded="True">
-                  <Node name="ZigZagMovement.cs" selected="True" />
+                  <Node name="VerticalMovement.cs" selected="True" />
                 </Node>
               </Node>
             </Node>
@@ -29,7 +31,7 @@
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="a5ebb6df-cbeb-4b1c-bd04-8e2b47e9d71e" />
+  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="01996643-3ec6-4365-b1ca-87b6de538161" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>

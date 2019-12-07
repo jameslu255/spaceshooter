@@ -325,6 +325,8 @@
 "Assets/Scripts/DestroyByTime.cs"
 "Assets/Scripts/DroidController.cs"
 "Assets/Scripts/GameController.cs"
+"Assets/Scripts/Movement/BasicMovement.cs"
+"Assets/Scripts/Movement/BurstMovement.cs"
 "Assets/Scripts/Movement/HorizontalMovement.cs"
 "Assets/Scripts/Movement/MovementBase.cs"
 "Assets/Scripts/Movement/SpiralMovement.cs"

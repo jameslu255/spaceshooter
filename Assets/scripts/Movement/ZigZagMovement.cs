@@ -9,10 +9,12 @@ public class ZigZagMovement : MovementBase
 
     protected override void Move()
     {
-        var newPosition = new Vector3();
-        newPosition.x = Rb.position.x + AmplitudeX * Time.deltaTime * DirectionX;
-        newPosition.z = Rb.position.z + AmplitudeZ * Time.deltaTime * DirectionZ;
-        newPosition.y = Rb.position.y;
+        var newPosition = new Vector3
+        {
+            x = Rb.position.x + AmplitudeX * Time.deltaTime * DirectionX,
+            z = Rb.position.z + AmplitudeZ * Time.deltaTime * DirectionZ,
+            y = Rb.position.y
+        };
         Rb.position = newPosition;
         CheckBoundary();
     }

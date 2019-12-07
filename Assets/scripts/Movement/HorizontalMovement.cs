@@ -8,10 +8,12 @@ public class HorizontalMovement : MovementBase
 
     protected override void Move()
     {
-        var newPosition = new Vector3();
-        newPosition.x = Rb.position.x + Amplitude * Time.deltaTime * DirectionX;
-        newPosition.y = Rb.position.y;
-        newPosition.z = Rb.position.z;
+        var newPosition = new Vector3
+        {
+            x = Rb.position.x + Amplitude * Time.deltaTime * DirectionX,
+            y = Rb.position.y,
+            z = Rb.position.z
+        };
         Rb.position = newPosition;
         CheckBoundary();
     }
