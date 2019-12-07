@@ -71,4 +71,12 @@ public class DroidController : MonoBehaviour
         var asteroidCollider = GetComponent<CapsuleCollider>();
         Physics.IgnoreCollision(playerBoundaryCollider, asteroidCollider);
     }
+
+    void OnTriggerExit(Collider other)
+    {
+        if (other.tag == "Boundary")
+        {
+            Destroy(this.gameObject);
+        }
+    }
 }

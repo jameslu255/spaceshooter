@@ -19,8 +19,8 @@ public class LevelController : MonoBehaviour
     {
         StartCoroutine(StartDelay(LevelStartDelay));
         StartCoroutine(SpawnCornerDroids());
-        StartCoroutine(SpawnAsteroids());
-        StartCoroutine(SpawnDroids());
+        //StartCoroutine(SpawnAsteroids());
+        //StartCoroutine(SpawnDroids());
     }
 
     IEnumerator SpawnAsteroids()

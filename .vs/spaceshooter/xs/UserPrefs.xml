@@ -1,11 +1,7 @@
 ﻿<Properties StartupConfiguration="{A4D7B93E-2024-7CC3-A11F-24CA182BFB09}|">
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/Movement/MovementBase.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/Controllers/PlayerController.cs">
     <Files>
-      <File FileName="Assets/Scripts/Controllers/LevelController.cs" Line="22" Column="42" />
-      <File FileName="Assets/Scripts/Controllers/AsteroidController.cs" Line="29" Column="35" />
-      <File FileName="Assets/Scripts/Controllers/PlayerController.cs" Line="44" Column="55" />
-      <File FileName="Assets/Scripts/Controllers/GameController.cs" Line="33" Column="53" />
-      <File FileName="Assets/Scripts/Movement/MovementBase.cs" Line="20" Column="88" />
+      <File FileName="Assets/Scripts/Controllers/PlayerController.cs" Line="42" Column="82" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
@@ -14,9 +10,8 @@
             <Node name="Assets" expanded="True">
               <Node name="BasicBeamShot" expanded="True" />
               <Node name="Scripts" expanded="True">
-                <Node name="Controllers" expanded="True" />
-                <Node name="Movement" expanded="True">
-                  <Node name="MovementBase.cs" selected="True" />
+                <Node name="Controllers" expanded="True">
+                  <Node name="PlayerController.cs" selected="True" />
                 </Node>
               </Node>
             </Node>
@@ -27,7 +22,7 @@
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="97de3bd1-a867-4e7d-81e5-db985392e137" />
+  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="03aaddf2-30d1-4c5b-80ac-cfc441e61b5a" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>

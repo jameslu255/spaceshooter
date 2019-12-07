@@ -35,13 +35,12 @@ public class PlayerController : MonoBehaviour
         {
             Rb.velocity = Vector3.zero;
             Debug.Log(Time.deltaTime);
-            return;
         }
-        if (other.tag == "Enemy")
+        else if (other.tag == "Enemy")
         {
             MusicSource.Play();
-            Instantiate(playerExplosion, transform.position, transform.rotation);
-            Instantiate(explosion, other.transform.position, other.transform.rotation);
+            Destroy(Instantiate(playerExplosion, transform.position, transform.rotation), 2);
+            Destroy(Instantiate(explosion, other.transform.position, other.transform.rotation), 2);
             Destroy(other.gameObject);
             Destroy(gameObject);
         }
