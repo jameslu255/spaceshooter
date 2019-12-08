@@ -24,7 +24,7 @@ MonoBehaviour:
   m_MinSize: {x: 677, y: 321}
   m_MaxSize: {x: 12002, y: 8021}
   vertical: 0
-  controlID: 12984
+  controlID: 15362
 --- !u!114 &2
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -136,7 +136,7 @@ MonoBehaviour:
   m_MinSize: {x: 402, y: 321}
   m_MaxSize: {x: 8002, y: 8021}
   vertical: 1
-  controlID: 12985
+  controlID: 15363
 --- !u!114 &4
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -161,7 +161,7 @@ MonoBehaviour:
   m_MinSize: {x: 402, y: 221}
   m_MaxSize: {x: 8002, y: 4021}
   vertical: 0
-  controlID: 12986
+  controlID: 15364
 --- !u!114 &5
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -336,9 +336,9 @@ MonoBehaviour:
       m_Size: {x: 1, y: 1}
     yGrid:
       m_Fade:
-        m_Target: 0
+        m_Target: 1
         speed: 2
-        m_Value: 0.20303959
+        m_Value: 1
       m_Color: {r: 0.5, g: 0.5, b: 0.5, a: 0.4}
       m_Pivot: {x: 0, y: 0, z: 0}
       m_Size: {x: 1, y: 1}
@@ -354,9 +354,9 @@ MonoBehaviour:
     m_GridAxis: 1
     m_gridOpacity: 0.5
   m_Rotation:
-    m_Target: {x: 0.9995035, y: 0.00033499135, z: -0.029393785, w: 0.011392664}
+    m_Target: {x: 0.9319302, y: 0.0055438485, z: -0.014259516, w: 0.36231712}
     speed: 2
-    m_Value: {x: 0.999503, y: 0.0003349912, z: -0.02939377, w: 0.011392659}
+    m_Value: {x: 0.9319294, y: 0.005543844, z: -0.014259504, w: 0.36231682}
   m_Size:
     m_Target: 58.482327
     speed: 2
@@ -636,5 +636,5 @@ MonoBehaviour:
     m_ControlHash: 1412526313
     m_PrefName: Preview_InspectorPreview
   m_PreviewWindow: {fileID: 0}
-  m_LastInspectedObjectInstanceID: 18092
-  m_LastVerticalScrollValue: 2021
+  m_LastInspectedObjectInstanceID: -1
+  m_LastVerticalScrollValue: 0

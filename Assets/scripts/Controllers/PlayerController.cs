@@ -47,7 +47,7 @@ public class PlayerController : MonoBehaviour
         }
         else if (other.tag == "Enemy")
         {
-            currHealth -= 25;                       //TODO change this to Macro when difficulty is added
+            currHealth -= 25;                   //TODO change this to Macro when difficulty is added
             health.TakeDamage(25, MaxHealth);   //TODO same as above
             if (currHealth <= 0)
             {
