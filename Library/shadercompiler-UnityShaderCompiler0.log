@@ -1,2 +1,12 @@
 Base path: '/Applications/Unity/Unity.app/Contents', plugins path '/Applications/Unity/Unity.app/Contents/PlaybackEngines'
 Cmd: initializeCompiler
+Cmd: preprocess
+  insize=1596 outsize=649 ok=1
+Cmd: preprocess
+  insize=1428 outsize=602 ok=1
+Cmd: preprocess
+  insize=1530 outsize=595 ok=1
+Cmd: preprocess
+  insize=1426 outsize=576 ok=1
+Cmd: preprocess
+  insize=1907 outsize=720 ok=1

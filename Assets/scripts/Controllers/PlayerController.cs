@@ -23,6 +23,7 @@ public class PlayerController : MonoBehaviour
     {
         Rb = GetComponent<Rigidbody>();
         MusicSource.clip = MusicClip;
+        MusicSource.volume = 0.5f;
         PlayerBoundary = GameObject.Find("PlayerBoundary").GetComponent<BoxCollider>();
         currHealth = MaxHealth;
         this.HealthBar.TryGetComponent<HealthBarController>(out this.health);
@@ -51,10 +52,11 @@ public class PlayerController : MonoBehaviour
             health.TakeDamage(25, MaxHealth);   //TODO same as above
             if (currHealth <= 0)
             {
-                MusicSource.Play();
+                MusicSource.volume = 1f;
                 Destroy(Instantiate(playerExplosion, transform.position, transform.rotation), 2);
                 Destroy(gameObject);
             }
+            MusicSource.Play();
             Destroy(Instantiate(explosion, other.transform.position, other.transform.rotation), 2);
             Destroy(other.gameObject);
         }
