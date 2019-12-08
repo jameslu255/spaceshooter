@@ -7,16 +7,25 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private AudioSource MusicSource;
     [SerializeField] private GameObject explosion;
     [SerializeField] private GameObject playerExplosion;
+    [SerializeField] private GameObject HealthBar;
     [SerializeField] private float Speed;
     [SerializeField] private float RotationAngle = 30f;
+    [SerializeField] public int MaxHealth = 100;
+    private int currHealth; 
     private Rigidbody Rb;
     private BoxCollider PlayerBoundary;
+    private HealthBarController health;
+
+    //Macros for difficulty: 20, 25 or 35 damage
+    //Ship with max health of 100 can take 5, 4 or 3 hits before exploding
 
     void Start()
     {
         Rb = GetComponent<Rigidbody>();
         MusicSource.clip = MusicClip;
         PlayerBoundary = GameObject.Find("PlayerBoundary").GetComponent<BoxCollider>();
+        currHealth = MaxHealth;
+        this.HealthBar.TryGetComponent<HealthBarController>(out this.health);
     }
 
     void FixedUpdate()
@@ -38,11 +47,16 @@ public class PlayerController : MonoBehaviour
         }
         else if (other.tag == "Enemy")
         {
-            MusicSource.Play();
-            Destroy(Instantiate(playerExplosion, transform.position, transform.rotation), 2);
+            currHealth -= 25;                       //TODO change this to Macro when difficulty is added
+            health.TakeDamage(25, MaxHealth);   //TODO same as above
+            if (currHealth <= 0)
+            {
+                MusicSource.Play();
+                Destroy(Instantiate(playerExplosion, transform.position, transform.rotation), 2);
+                Destroy(gameObject);
+            }
             Destroy(Instantiate(explosion, other.transform.position, other.transform.rotation), 2);
             Destroy(other.gameObject);
-            Destroy(gameObject);
         }
     }
 
