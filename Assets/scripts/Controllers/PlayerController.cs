@@ -50,6 +50,7 @@ public class PlayerController : MonoBehaviour
         {
             currHealth -= 25;                   //TODO change this to Macro when difficulty is added
             health.TakeDamage(25, MaxHealth);   //TODO same as above
+            CameraShake.changeShakeDuration(1);
             if (currHealth <= 0)
             {
                 MusicSource.volume = 1f;

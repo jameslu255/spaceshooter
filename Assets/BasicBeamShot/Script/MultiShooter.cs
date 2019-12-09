@@ -10,6 +10,15 @@ public class MultiShooter : MonoBehaviour
     public float Disturbance = 0;
 
     public int ShotType = 0;
+    public float fireRate = 0.5F;
+    private float nextFire = 0.0F;
+
+    public int laserPowerUp = 1;
+    public float laserTimer = 0.0F;
+    public bool isFiring = false;
+
+    public static bool fired = false;
+    public static bool secondaryFired = false;
 
     private GameObject NowShot;
 
@@ -23,8 +32,10 @@ public class MultiShooter : MonoBehaviour
         GameObject Bullet;
 
         //create BasicBeamShot
-        if (Input.GetButtonDown("Jump"))
+        if (Input.GetButtonDown("Jump") && Time.time > nextFire && isFiring == false)
         {
+            nextFire = Time.time + fireRate;
+            fired = true;
             Bullet = Shot1;
             //Fire
             GameObject s1 = (GameObject)Instantiate(Bullet, this.transform.position, Quaternion.Euler(new Vector3(90, 0, 0)));
@@ -36,11 +47,13 @@ public class MultiShooter : MonoBehaviour
             wav.GetComponent<BeamWave>().col = this.GetComponent<BeamParam>().BeamColor;
 
         }
-
-
         //create GeroBeam
-        if (Input.GetButtonDown("Fire2"))
+        if (Input.GetButtonDown("Fire2") && laserPowerUp > 0 && isFiring == false)
         {
+            secondaryFired = true;
+            laserTimer = 0;
+            laserPowerUp--;
+            isFiring = true;
             GameObject wav = (GameObject)Instantiate(Wave, this.transform.position, Quaternion.Euler(new Vector3(90, 0, 0)));
             wav.transform.Rotate(Vector3.left, 90.0f);
             wav.GetComponent<BeamWave>().col = this.GetComponent<BeamParam>().BeamColor;
@@ -48,6 +61,7 @@ public class MultiShooter : MonoBehaviour
             Bullet = Shot2;
             //Fire
             NowShot = (GameObject)Instantiate(Bullet, this.transform.position, Quaternion.Euler(new Vector3(90, 0, 0)));
+            
         }
         //it's Not "GetButtonDown"
         if (Input.GetButton("Fire2"))
@@ -61,11 +75,14 @@ public class MultiShooter : MonoBehaviour
             NowShot.transform.localScale = s;
             NowShot.GetComponent<BeamParam>().SetBeamParam(bp);
         }
-        if (Input.GetButtonUp("Fire2"))
+
+        if (isFiring == true)
         {
-            if (NowShot != null)
+            laserTimer += Time.deltaTime;
+            if (NowShot != null && laserTimer > 10.0)
             {
                 NowShot.GetComponent<BeamParam>().bEnd = true;
+                isFiring = false;
             }
         }
     }

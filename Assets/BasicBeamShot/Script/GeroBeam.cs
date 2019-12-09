@@ -14,15 +14,33 @@ public class GeroBeam : MonoBehaviour {
 	private int LRSize;
 	private GeroBeamHit HitObj;
 	private float RateA;
+    public AudioClip MusicClip;
+    public AudioSource MusicSource;
 
-	public float NowLengthGlobal;
+
+    public float NowLengthGlobal;
 	private BeamParam BP;
     private Vector3 HitObjSize;
     private GameObject Flash;
     private float FlashSize;
+    private GameController gameController;
+    public GameObject explosion;
+
+    public int scoreValue;
     // Use this for initialization
-    void Start () {
-		BP = GetComponent<BeamParam>();
+    void Start () 
+    {
+        GameObject gameControllerObject = GameObject.FindWithTag("GameController");
+        if (gameControllerObject != null)
+        {
+            gameController = gameControllerObject.GetComponent<GameController>();
+        }
+        if (gameController == null)
+        {
+            Debug.Log("Cannot find 'GameController' script");
+        }
+        MusicSource.clip = MusicClip; 
+        BP = GetComponent<BeamParam>();
 		LRSize = 16;
 		NowLength = 0.0f;
 		LR = this.GetComponent<LineRenderer>();
@@ -101,12 +119,20 @@ public class GeroBeam : MonoBehaviour {
                 int layerMask = ~(1 << LayerMask.NameToLayer("NoBeamHit") | 1 << 2);
                 if (Physics.Raycast(NowPos,F_Vec[i],out hit,BlockLen*workNLG,layerMask)){
     				GameObject hitobj = hit.collider.gameObject;
-					NowLength = ((BlockLen*i)+hit.distance)/MaxLength;
+                    
+                    NowLength = ((BlockLen*i)+hit.distance)/MaxLength;
                     HitObj.transform.position = NowPos + F_Vec[i] * hit.distance;
 					HitObj.transform.rotation = Quaternion.AngleAxis(180.0f,transform.up)* this.transform.rotation;
                     //HitObj.transform.localScale = HitObjSize * Width * BP.Scale * 10.0f;
                     bHitNow = true;
-					break;
+                    if (hitobj.tag == "Enemy")
+                    {
+                        Instantiate(explosion, hitobj.transform.position, hitobj.transform.rotation);
+                        //MusicSource.Play();
+                        Destroy(hitobj);
+                        //gameController.AddScore(scoreValue);
+                    }
+                    break;
 				}
 			}
 		}
