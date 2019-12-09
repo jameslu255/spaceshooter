@@ -124,7 +124,7 @@ Examples:
 
 **Describe how your work intersects with game feel, graphic design, and world-building. Include your visual style guide if one exists.**
 
-## Input
+## Input - Brian Nguyen
 
 **Describe the default input configuration.**
 
