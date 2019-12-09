@@ -124,9 +124,11 @@ Examples:
 
 **Describe how your work intersects with game feel, graphic design, and world-building. Include your visual style guide if one exists.**
 
-## Input
+## Input - Brian Nguyen
 
 **Describe the default input configuration.**
+
+We decided to follow classic input configuration for flash games by keeping controls very simple. The primary keys for movement are WASD, however the arrow keys can also be used for movement. Space is utilized to fire a regular beam and right click is utilized for the special beam. The escape key is used to pause the game and launch the pause menu.
 
 **Add an entry for each platform or input style your project supports.**
 
