@@ -44,7 +44,7 @@ public class PlayerController : MonoBehaviour
         if (other.tag == "PlayerBoundary")
         {
             Rb.velocity = Vector3.zero;
-            Debug.Log(Time.deltaTime);
+            //Debug.Log(Time.deltaTime);
         }
         else if (other.tag == "Enemy")
         {

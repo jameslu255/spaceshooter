@@ -52,7 +52,7 @@ public class MultiShooter : MonoBehaviour
         {
             secondaryFired = true;
             laserTimer = 0;
-            laserPowerUp--;
+            //laserPowerUp--;
             isFiring = true;
             GameObject wav = (GameObject)Instantiate(Wave, this.transform.position, Quaternion.Euler(new Vector3(90, 0, 0)));
             wav.transform.Rotate(Vector3.left, 90.0f);
@@ -64,8 +64,9 @@ public class MultiShooter : MonoBehaviour
             
         }
         //it's Not "GetButtonDown"
-        if (Input.GetButton("Fire2"))
+        if (Input.GetButton("Fire2") && laserPowerUp > 0)
         {
+            laserPowerUp--;
             BeamParam bp = this.GetComponent<BeamParam>();
             if (NowShot.GetComponent<BeamParam>().bGero)
                 NowShot.transform.parent = transform;
