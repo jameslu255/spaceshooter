@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using UnityEngine.SceneManagement;
 
 public class PlayerController : MonoBehaviour
 {
@@ -56,6 +57,7 @@ public class PlayerController : MonoBehaviour
                 MusicSource.volume = 1f;
                 Destroy(Instantiate(playerExplosion, transform.position, transform.rotation), 2);
                 Destroy(gameObject);
+                SceneManager.LoadScene("End");
             }
             MusicSource.Play();
             Destroy(Instantiate(explosion, other.transform.position, other.transform.rotation), 2);
