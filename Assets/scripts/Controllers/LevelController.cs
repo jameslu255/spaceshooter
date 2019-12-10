@@ -37,12 +37,12 @@ public class LevelController : MonoBehaviour
         }
     }
 
-    IEnumerator StartDelay(float seconds)
+    public IEnumerator StartDelay(float seconds)
     {
         yield return new WaitForSeconds(seconds);
     }
 
-    IEnumerator SpawnDroids()
+    private IEnumerator SpawnDroids()
     {
         for (int wave = 0; wave < WaveCount; wave++)
         {
@@ -58,7 +58,7 @@ public class LevelController : MonoBehaviour
         }
     }
 
-    IEnumerator SpawnCornerDroids()
+    private IEnumerator SpawnCornerDroids()
     {
         for (int wave = 0; wave < WaveCount; wave++)
         {
