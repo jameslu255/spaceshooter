@@ -128,7 +128,10 @@ Examples:
 
 **Describe the default input configuration.**
 
-We decided to follow classic input configuration for flash games by keeping controls very simple. The primary keys for movement are WASD, however the arrow keys can also be used for movement. Space is utilized to fire a regular beam and right click is utilized for the special beam. The escape key is used to pause the game and launch the pause menu.
+We decided to follow classic input configuration for flash games by keeping controls very simple. The primary keys for movement are WASD, however the arrow keys can also be used for movement. WASD are the primary keys for movement to allow for easy access to the Pause Menu by clicking Escape. Space is utilized to fire a regular beam and right click is utilized for the special beam. 
+
+Mouse clicks are used to select buttons from the Start and Pause menus. The alpha levels of the menu items were edited so that buttons become darker when the mouse hovers over them and gets even darker when a button is selected. This was implemented to make navigation easier and to make the buttons more responsive. The size of buttons was also stressed and greatly depends on the importance of buttons. The Resume button in the pause menu is larger than the Menu and Quit buttons so gamers can easily navigate back to the action of the game.
+
 
 **Add an entry for each platform or input style your project supports.**
 
