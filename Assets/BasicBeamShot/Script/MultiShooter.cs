@@ -13,7 +13,7 @@ public class MultiShooter : MonoBehaviour
     private float nextFire = 0.0F;
     public static float timer = 0.0F;
 
-    public int laserPowerUp = 1;
+    public static int laserPowerUp = 0;
     public float laserTimer = 0.0F;
     public bool isFiring = false;
 

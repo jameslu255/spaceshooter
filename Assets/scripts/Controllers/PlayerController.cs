@@ -5,6 +5,7 @@ using UnityEngine.SceneManagement;
 public class PlayerController : MonoBehaviour
 {
     [SerializeField] private AudioClip MusicClip;
+    [SerializeField] private AudioClip powerUp;
     [SerializeField] private AudioSource MusicSource;
     [SerializeField] private GameObject explosion;
     [SerializeField] private GameObject playerExplosion;
@@ -59,6 +60,7 @@ public class PlayerController : MonoBehaviour
         }
         else if (other.tag == "Enemy")
         {
+            MusicSource.clip = MusicClip;
             currHealth -= 25;                   //TODO change this to Macro when difficulty is added
             health.TakeDamage(25, MaxHealth);   //TODO same as above
             CameraShake.changeShakeDuration(1);
@@ -75,6 +77,13 @@ public class PlayerController : MonoBehaviour
             MusicSource.Play();
             Destroy(Instantiate(explosion, other.transform.position, other.transform.rotation), 2);
             Destroy(other.gameObject);
+        }
+        else if (other.tag == "PowerUp")
+        {
+            MusicSource.clip = powerUp;
+            Destroy(other.gameObject);
+            MultiShooter.laserPowerUp = 1;
+            MusicSource.Play();
         }
     }
 

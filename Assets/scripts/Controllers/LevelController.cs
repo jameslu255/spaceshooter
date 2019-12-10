@@ -7,6 +7,7 @@ public class LevelController : MonoBehaviour
 {
     [SerializeField] private GameObject Droid;
     [SerializeField] private GameObject Asteroid;
+    [SerializeField] private GameObject LaserPowerUp;
 
     private int Level;
     private int WaveCount;
@@ -28,6 +29,11 @@ public class LevelController : MonoBehaviour
     {
         for (int wave = 0; wave < WaveCount; wave++)
         {
+            if (wave == 6)
+            {
+                var spawnPosition = GenerateRandomSpawnPosition();
+                Instantiate(LaserPowerUp, spawnPosition, Quaternion.identity);
+            }
             if (wave == 8)
             {
                 DroidCount = 10;
