@@ -20,7 +20,6 @@ public class PlayerController : MonoBehaviour
     private BoxCollider PlayerBoundary;
     private HealthBarController health;
     private GameController gameController;
-    private bool hasPlayed = false;
 
     //Macros for difficulty: 20, 25 or 35 damage
     //Ship with max health of 100 can take 5, 4 or 3 hits before exploding
