@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class LevelController : MonoBehaviour
 {
@@ -27,7 +28,6 @@ public class LevelController : MonoBehaviour
     {
         for (int wave = 0; wave < WaveCount; wave++)
         {
-            Debug.Log(wave);
             if (wave == 8)
             {
                 DroidCount = 10;
@@ -41,6 +41,7 @@ public class LevelController : MonoBehaviour
             }
             yield return new WaitForSeconds(WaveDelay);
         }
+        SceneManager.LoadScene("Victory");
     }
 
     IEnumerator StartDelay(float seconds)
@@ -91,7 +92,7 @@ public class LevelController : MonoBehaviour
     private Vector3 GenerateRandomSpawnPosition()
     {
         var boundary = GameObject.Find("AsteroidBoundary").GetComponent<BoxCollider>();
-        var padding = 5f;
+        var padding = 1f;
         var zOffset = 30f;
         var boundaryX = boundary.size.x / 2 - padding;
         var boundaryY = boundary.size.y / 2 - padding;
@@ -118,7 +119,7 @@ public class LevelController : MonoBehaviour
         UnitSpawnDelay = 0.05f;
         LevelStartDelay = 1f;
         WaveDelay = 4f;
-        WaveCount = 15;
+        WaveCount = 13;
         DroidCount = 3;
     }
 }

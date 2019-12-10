@@ -68,13 +68,9 @@ public class PlayerController : MonoBehaviour
                 MusicSource.volume = 1f;
                 Destroy(Instantiate(playerExplosion, transform.position, transform.rotation), 2);
                 Destroy(gameObject);
-<<<<<<< HEAD
                 gameController.AddScore((int)MultiShooter.timer);
                 SceneManager.LoadScene("End");
-=======
                 Initiate.Fade("End", Color.black, 0.3f);
-
->>>>>>> 87288519d2ec022befbaf2387897c237b294cc6a
             }
             MusicSource.Play();
             Destroy(Instantiate(explosion, other.transform.position, other.transform.rotation), 2);
