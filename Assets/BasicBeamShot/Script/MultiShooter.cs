@@ -13,18 +13,28 @@ public class MultiShooter : MonoBehaviour
     private float nextFire = 0.0F;
     public static float timer = 0.0F;
 
+
     public static int laserPowerUp = 0;
     public float laserTimer = 0.0F;
     public bool isFiring = false;
 
     public static bool fired = false;
     public static bool secondaryFired = false;
-
+    GameController gameController;
     private GameObject NowShot;
 
     void Start()
     {
         NowShot = null;
+        GameObject gameControllerObject = GameObject.FindWithTag("GameController");
+        if (gameControllerObject != null)
+        {
+            gameController = gameControllerObject.GetComponent<GameController>();
+        }
+        if (gameController == null)
+        {
+            Debug.Log("Cannot find 'GameController' script");
+        }
     }
 
     void Update()
