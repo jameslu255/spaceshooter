@@ -11,7 +11,7 @@ public class MultiShooter : MonoBehaviour
 
     public int ShotType = 0;
     private float nextFire = 0.0F;
-    private float timer = 0.0F;
+    public static float timer = 0.0F;
 
     public int laserPowerUp = 1;
     public float laserTimer = 0.0F;

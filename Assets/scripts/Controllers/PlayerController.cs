@@ -16,12 +16,22 @@ public class PlayerController : MonoBehaviour
     private Rigidbody Rb;
     private BoxCollider PlayerBoundary;
     private HealthBarController health;
+    private GameController gameController;
 
     //Macros for difficulty: 20, 25 or 35 damage
     //Ship with max health of 100 can take 5, 4 or 3 hits before exploding
 
     void Start()
     {
+        GameObject gameControllerObject = GameObject.FindWithTag("GameController");
+        if (gameControllerObject != null)
+        {
+            gameController = gameControllerObject.GetComponent<GameController>();
+        }
+        if (gameController == null)
+        {
+            Debug.Log("Cannot find 'GameController' script");
+        }
         Rb = GetComponent<Rigidbody>();
         MusicSource.clip = MusicClip;
         MusicSource.volume = 0.5f;
@@ -58,6 +68,7 @@ public class PlayerController : MonoBehaviour
                 //MusicSource.volume = 1f;
                 Destroy(Instantiate(playerExplosion, transform.position, transform.rotation), 2);
                 Destroy(gameObject);
+                gameController.AddScore((int)MultiShooter.timer);
                 SceneManager.LoadScene("End");
             }
             MusicSource.Play();

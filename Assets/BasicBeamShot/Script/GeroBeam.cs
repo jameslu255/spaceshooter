@@ -130,7 +130,7 @@ public class GeroBeam : MonoBehaviour {
                         Instantiate(explosion, hitobj.transform.position, hitobj.transform.rotation);
                         //MusicSource.Play();
                         Destroy(hitobj);
-                        //gameController.AddScore(scoreValue);
+                        gameController.AddScore(10);
                     }
                     break;
 				}

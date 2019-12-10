@@ -52,7 +52,7 @@ public class BeamCollision : MonoBehaviour {
                     Instantiate(explosion, hitobj.transform.position, hitobj.transform.rotation);
                     MusicSource.Play();
                     Destroy(hitobj);
-                    gameController.AddScore(scoreValue);
+                    gameController.AddScore(10);
                 }
                 Quaternion Angle;
                 //Reflect to Normal

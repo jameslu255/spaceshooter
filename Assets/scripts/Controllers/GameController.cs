@@ -9,7 +9,7 @@ public class GameController : MonoBehaviour
     public AudioClip MusicClip;
     public AudioSource MusicSource;
 
-    private int Score;
+    public static int Score = 0;
 
     void Start()
     {
@@ -28,6 +28,11 @@ public class GameController : MonoBehaviour
     public void AddScore(int newScoreValue)
     {
         Score += newScoreValue;
+    }
+
+    public int returnScore()
+    {
+        return Score;
     }
 
     private void Update()

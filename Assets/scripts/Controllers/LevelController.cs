@@ -27,6 +27,11 @@ public class LevelController : MonoBehaviour
     {
         for (int wave = 0; wave < WaveCount; wave++)
         {
+            if (wave == 8)
+            {
+                DroidCount = 10;
+                AsteroidCount = 50;
+            }
             for (int i = 0; i < AsteroidCount; i++)
             {
                 var spawnPosition = GenerateRandomSpawnPosition();
@@ -48,12 +53,17 @@ public class LevelController : MonoBehaviour
         {
             for (int i = 0; i < DroidCount; i++)
             {
-                var spawnPosition = GenerateRandomSpawnPosition();
-                var spawnRotation = Quaternion.Euler(new Vector3(270, 0, 0));
-                var droid = Instantiate(Droid, spawnPosition, spawnRotation);
-                droid.GetComponent<DroidController>().AddRandomMovement();
-                yield return new WaitForSeconds(UnitSpawnDelay);
+                if (wave > 4)
+                {
+                    var spawnPosition = GenerateRandomSpawnPosition();
+                    var spawnRotation = Quaternion.Euler(new Vector3(270, 0, 0));
+                    var droid = Instantiate(Droid, spawnPosition, spawnRotation);
+                    droid.GetComponent<DroidController>().AddRandomMovement();
+                    yield return new WaitForSeconds(UnitSpawnDelay);
+                }
+                
             }
+            
             yield return new WaitForSeconds(WaveDelay);
         }
     }
@@ -62,12 +72,18 @@ public class LevelController : MonoBehaviour
     {
         for (int wave = 0; wave < WaveCount; wave++)
         {
+            Debug.Log(wave);
             for (int i = 0; i < DroidCount; i++)
             {
-                var cornerDroid = Instantiate(Droid);
-                cornerDroid.AddComponent<CornerMovement>();
-                yield return new WaitForSeconds(UnitSpawnDelay);
+                if (wave > 4)
+                {
+                    var cornerDroid = Instantiate(Droid);
+                    cornerDroid.AddComponent<CornerMovement>();
+                    yield return new WaitForSeconds(UnitSpawnDelay);
+                }
+                
             }
+            
             yield return new WaitForSeconds(WaveDelay);
         }
     }
@@ -97,13 +113,12 @@ public class LevelController : MonoBehaviour
     public void SetLevel(int newLevel)
     {
         Level = newLevel;
-
         // TODO: Change parameters based on the level here.
         AsteroidCount = 30;
         UnitSpawnDelay = 0.05f;
         LevelStartDelay = 1f;
         WaveDelay = 4f;
-        WaveCount = 8;
+        WaveCount = 15;
         DroidCount = 3;
     }
 }
