@@ -12,7 +12,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private float Speed;
     [SerializeField] private float RotationAngle = 30f;
     [SerializeField] public int MaxHealth = 100;
-    private int currHealth; 
+    private int currHealth;
     private Rigidbody Rb;
     private BoxCollider PlayerBoundary;
     private HealthBarController health;
@@ -65,11 +65,16 @@ public class PlayerController : MonoBehaviour
             if (currHealth <= 0)
             {
                 MusicSource.Play();
-                //MusicSource.volume = 1f;
+                MusicSource.volume = 1f;
                 Destroy(Instantiate(playerExplosion, transform.position, transform.rotation), 2);
                 Destroy(gameObject);
+<<<<<<< HEAD
                 gameController.AddScore((int)MultiShooter.timer);
                 SceneManager.LoadScene("End");
+=======
+                Initiate.Fade("End", Color.black, 0.3f);
+
+>>>>>>> 87288519d2ec022befbaf2387897c237b294cc6a
             }
             MusicSource.Play();
             Destroy(Instantiate(explosion, other.transform.position, other.transform.rotation), 2);

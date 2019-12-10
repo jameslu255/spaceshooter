@@ -43,4 +43,9 @@ public class GameController : MonoBehaviour
             StartNewGame();
         }
     }
+
+    public void EndGame()
+    {
+
+    }
 }

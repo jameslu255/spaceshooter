@@ -27,6 +27,7 @@ public class LevelController : MonoBehaviour
     {
         for (int wave = 0; wave < WaveCount; wave++)
         {
+            Debug.Log(wave);
             if (wave == 8)
             {
                 DroidCount = 10;
@@ -72,7 +73,6 @@ public class LevelController : MonoBehaviour
     {
         for (int wave = 0; wave < WaveCount; wave++)
         {
-            Debug.Log(wave);
             for (int i = 0; i < DroidCount; i++)
             {
                 if (wave > 4)

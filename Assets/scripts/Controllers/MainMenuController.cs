@@ -8,7 +8,8 @@ public class MainMenuController : MonoBehaviour
 
     public void PlayGame()
     {
-        SceneManager.LoadScene("Main");
+        Initiate.Fade("Main", Color.black, 2f);
+        //SceneManager.LoadScene("Main");
     }
 
     public void QuitGame()
