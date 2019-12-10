@@ -6,6 +6,8 @@ public class PlayerController : MonoBehaviour
 {
     [SerializeField] private AudioClip MusicClip;
     [SerializeField] private AudioClip powerUp;
+    [SerializeField] private AudioClip danger;
+    [SerializeField] private AudioSource dangerSource;
     [SerializeField] private AudioSource MusicSource;
     [SerializeField] private GameObject explosion;
     [SerializeField] private GameObject playerExplosion;
@@ -18,6 +20,7 @@ public class PlayerController : MonoBehaviour
     private BoxCollider PlayerBoundary;
     private HealthBarController health;
     private GameController gameController;
+    private bool hasPlayed = false;
 
     //Macros for difficulty: 20, 25 or 35 damage
     //Ship with max health of 100 can take 5, 4 or 3 hits before exploding
@@ -49,6 +52,7 @@ public class PlayerController : MonoBehaviour
         Vector3 movement = new Vector3(moveHorizontal, 0.0f, moveVertical);
         Rb.AddForce(movement * Speed, ForceMode.Impulse);
         CheckPlayerBoundary();
+
     }
 
     void OnTriggerEnter(Collider other)
@@ -60,12 +64,12 @@ public class PlayerController : MonoBehaviour
         }
         else if (other.tag == "Enemy")
         {
-            MusicSource.clip = MusicClip;
             currHealth -= 25;                   //TODO change this to Macro when difficulty is added
             health.TakeDamage(25, MaxHealth);   //TODO same as above
             CameraShake.changeShakeDuration(1);
             if (currHealth <= 0)
             {
+                dangerSource.Stop();
                 MusicSource.Play();
                 MusicSource.volume = 1f;
                 Destroy(Instantiate(playerExplosion, transform.position, transform.rotation), 2);
@@ -74,9 +78,14 @@ public class PlayerController : MonoBehaviour
                 StartCoroutine(GameObject.Find("GameController").GetComponent<LevelController>().StartDelay(3f));
                 Initiate.Fade("End", Color.black, 0.3f);
             }
+            MusicSource.clip = MusicClip;
             MusicSource.Play();
             Destroy(Instantiate(explosion, other.transform.position, other.transform.rotation), 2);
             Destroy(other.gameObject);
+            if (currHealth == 25)
+            {
+                playDangerSound();
+            }
         }
         else if (other.tag == "PowerUp")
         {
@@ -84,7 +93,15 @@ public class PlayerController : MonoBehaviour
             Destroy(other.gameObject);
             MultiShooter.laserPowerUp = 1;
             MusicSource.Play();
+            var renderer = this.GetComponent<MeshRenderer>();
+            renderer.material.SetColor("_Color", Color.blue);
         }
+    }
+
+    private void playDangerSound()
+    {
+        dangerSource.clip = danger;
+        dangerSource.Play();
     }
 
     private void CheckPlayerBoundary()

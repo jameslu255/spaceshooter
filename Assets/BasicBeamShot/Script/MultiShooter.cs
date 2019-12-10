@@ -50,6 +50,8 @@ public class MultiShooter : MonoBehaviour
         //create GeroBeam
         if (Input.GetButtonDown("Fire2") && laserPowerUp > 0 && isFiring == false)
         {
+            var playerMesh = GameObject.Find("Player").GetComponent<MeshRenderer>();
+            playerMesh.material.SetColor("_Color", Color.white);
             secondaryFired = true;
             laserTimer = 0;
             //laserPowerUp--;

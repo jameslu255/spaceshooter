@@ -31,7 +31,7 @@ public class LevelController : MonoBehaviour
         {
             if (wave == 6)
             {
-                var spawnPosition = GenerateRandomSpawnPosition();
+                var spawnPosition = GeneratePowerUpRandomSpawnPosition();
                 Instantiate(LaserPowerUp, spawnPosition, Quaternion.identity);
             }
             if (wave == 8)
@@ -47,7 +47,7 @@ public class LevelController : MonoBehaviour
             }
             yield return new WaitForSeconds(WaveDelay);
         }
-        StartCoroutine(StartDelay(3f));
+        StartCoroutine(StartDelay(2f));
         Initiate.Fade("Victory", Color.white, 0.4f);
     }
 
@@ -100,6 +100,23 @@ public class LevelController : MonoBehaviour
     {
         var boundary = GameObject.Find("AsteroidBoundary").GetComponent<BoxCollider>();
         var padding = 1f;
+        var zOffset = 30f;
+        var boundaryX = boundary.size.x / 2 - padding;
+        var boundaryY = boundary.size.y / 2 - padding;
+        var boundaryZ = boundary.size.z / 2 - padding;
+
+        return new Vector3()
+        {
+            x = Random.Range(-boundaryX, boundaryX),
+            y = boundaryY * -1,
+            z = Random.Range(zOffset - boundaryZ, zOffset + boundaryZ)
+        };
+    }
+
+    private Vector3 GeneratePowerUpRandomSpawnPosition()
+    {
+        var boundary = GameObject.Find("AsteroidBoundary").GetComponent<BoxCollider>();
+        var padding = 20;
         var zOffset = 30f;
         var boundaryX = boundary.size.x / 2 - padding;
         var boundaryY = boundary.size.y / 2 - padding;
