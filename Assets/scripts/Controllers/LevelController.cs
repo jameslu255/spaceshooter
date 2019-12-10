@@ -47,10 +47,11 @@ public class LevelController : MonoBehaviour
             }
             yield return new WaitForSeconds(WaveDelay);
         }
-        SceneManager.LoadScene("Victory");
+        StartCoroutine(StartDelay(3f));
+        Initiate.Fade("Victory", Color.white, 0.4f);
     }
 
-    IEnumerator StartDelay(float seconds)
+    public IEnumerator StartDelay(float seconds)
     {
         yield return new WaitForSeconds(seconds);
     }
@@ -69,9 +70,9 @@ public class LevelController : MonoBehaviour
                     droid.GetComponent<DroidController>().AddRandomMovement();
                     yield return new WaitForSeconds(UnitSpawnDelay);
                 }
-                
+
             }
-            
+
             yield return new WaitForSeconds(WaveDelay);
         }
     }
@@ -88,9 +89,9 @@ public class LevelController : MonoBehaviour
                     cornerDroid.AddComponent<CornerMovement>();
                     yield return new WaitForSeconds(UnitSpawnDelay);
                 }
-                
+
             }
-            
+
             yield return new WaitForSeconds(WaveDelay);
         }
     }

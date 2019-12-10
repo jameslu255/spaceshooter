@@ -71,7 +71,7 @@ public class PlayerController : MonoBehaviour
                 Destroy(Instantiate(playerExplosion, transform.position, transform.rotation), 2);
                 Destroy(gameObject);
                 gameController.AddScore((int)MultiShooter.timer);
-                SceneManager.LoadScene("End");
+                StartCoroutine(GameObject.Find("GameController").GetComponent<LevelController>().StartDelay(3f));
                 Initiate.Fade("End", Color.black, 0.3f);
             }
             MusicSource.Play();
