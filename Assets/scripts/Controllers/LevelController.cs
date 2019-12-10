@@ -30,7 +30,7 @@ public class LevelController : MonoBehaviour
             for (int i = 0; i < AsteroidCount; i++)
             {
                 var spawnPosition = GenerateRandomSpawnPosition();
-                var asteroid = Instantiate(Asteroid, spawnPosition, Quaternion.identity);
+                Instantiate(Asteroid, spawnPosition, Quaternion.identity);
                 yield return new WaitForSeconds(UnitSpawnDelay);
             }
             yield return new WaitForSeconds(WaveDelay);

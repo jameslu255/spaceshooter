@@ -10,8 +10,8 @@ public class MultiShooter : MonoBehaviour
     public float Disturbance = 0;
 
     public int ShotType = 0;
-    public float fireRate = 0.5F;
     private float nextFire = 0.0F;
+    private float timer = 0.0F;
 
     public int laserPowerUp = 1;
     public float laserTimer = 0.0F;
@@ -30,11 +30,11 @@ public class MultiShooter : MonoBehaviour
     void Update()
     {
         GameObject Bullet;
-
+        timer += Time.deltaTime;
         //create BasicBeamShot
-        if (Input.GetButtonDown("Jump") && Time.time > nextFire && isFiring == false)
+        if (Input.GetButtonDown("Fire1") && (timer > nextFire) && isFiring == false)
         {
-            nextFire = Time.time + fireRate;
+            nextFire = timer + 1;
             fired = true;
             Bullet = Shot1;
             //Fire

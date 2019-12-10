@@ -54,7 +54,8 @@ public class PlayerController : MonoBehaviour
             CameraShake.changeShakeDuration(1);
             if (currHealth <= 0)
             {
-                MusicSource.volume = 1f;
+                MusicSource.Play();
+                //MusicSource.volume = 1f;
                 Destroy(Instantiate(playerExplosion, transform.position, transform.rotation), 2);
                 Destroy(gameObject);
                 SceneManager.LoadScene("End");
