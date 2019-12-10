@@ -25,6 +25,11 @@ public class GameController : MonoBehaviour
         GetComponent<LevelController>().StartLevel();
     }
 
+    public int ReturnScore()
+    {
+        return Score;
+    }
+
     public void AddScore(int newScoreValue)
     {
         Score += newScoreValue;
