@@ -119,7 +119,7 @@ public class LevelController : MonoBehaviour
         UnitSpawnDelay = 0.05f;
         LevelStartDelay = 1f;
         WaveDelay = 4f;
-        WaveCount = 13;
+        WaveCount = 14;
         DroidCount = 3;
     }
 }
