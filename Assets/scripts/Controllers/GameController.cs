@@ -10,7 +10,6 @@ public class GameController : MonoBehaviour
     public AudioSource MusicSource;
 
     public static int Score;
-    public int lastRealTime;
 
     void Start()
     {
@@ -20,7 +19,6 @@ public class GameController : MonoBehaviour
     private void StartNewGame()
     {
         Score = 0;
-        lastRealTime = (int)Time.realtimeSinceStartup;
         MusicSource.clip = MusicClip;
         MusicSource.Play();
         GetComponent<LevelController>().SetLevel(1);
