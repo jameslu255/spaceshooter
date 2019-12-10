@@ -47,8 +47,8 @@ public class LevelController : MonoBehaviour
             }
             yield return new WaitForSeconds(WaveDelay);
         }
-        StartCoroutine(StartDelay(2f));
-        Initiate.Fade("Victory", Color.white, 0.4f);
+        //StartCoroutine(StartDelay(2f));
+        Initiate.Fade("Victory", Color.white, 0.7f);
     }
 
     public IEnumerator StartDelay(float seconds)
