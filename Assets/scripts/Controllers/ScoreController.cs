@@ -23,6 +23,6 @@ public class ScoreController : MonoBehaviour
 
     void Update()
     {
-        Score.text = (gameController.returnScore()).ToString();
+        Score.text = (gameController.ReturnScore()).ToString();
     }
 }

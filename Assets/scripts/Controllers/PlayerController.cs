@@ -83,7 +83,7 @@ public class PlayerController : MonoBehaviour
             Destroy(other.gameObject);
             if (currHealth == 25)
             {
-                playDangerSound();
+                PlayDangerSound();
             }
         }
         else if (other.tag == "PowerUp")
@@ -97,7 +97,7 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-    private void playDangerSound()
+    private void PlayDangerSound()
     {
         dangerSource.clip = danger;
         dangerSource.Play();

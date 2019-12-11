@@ -30,7 +30,7 @@ public class GameController : MonoBehaviour
         Score += newScoreValue;
     }
 
-    public int returnScore()
+    public int ReturnScore()
     {
         return Score;
     }
@@ -42,10 +42,5 @@ public class GameController : MonoBehaviour
             SceneManager.LoadScene(SceneManager.GetActiveScene().name);
             StartNewGame();
         }
-    }
-
-    public void EndGame()
-    {
-
     }
 }
