@@ -120,9 +120,9 @@ Some physics conventions for the game are:
 Examples:
 * [Space Droid y-axis movement](https://github.com/jameslu255/spaceshooter/blob/82f47964cea0a685854fe32fc68d80d9ea00261a/Assets/scripts/Controllers/DroidController.cs#L13)
 * [Spaceship movement implementation](https://github.com/jameslu255/spaceshooter/blob/82f47964cea0a685854fe32fc68d80d9ea00261a/Assets/scripts/Controllers/PlayerController.cs#L38)
-* [PlayerBoundary screenshot](/Screenshots/movement-physics/PlayerBoundary.png)
-* [SpawnBoundary screenshot](/Screenshots/movement-physics/SpawnBoundary.png)
-* [Space Droid screenshot](/Screenshots/movement-physics/SpaceDroid.png)
+* [PlayerBoundary screenshot](Screenshots/movement-physics/PlayerBoundary.png)
+* [SpawnBoundary screenshot](Screenshots/movement-physics/SpawnBoundary.png)
+* [Space Droid screenshot](Screenshots/movement-physics/SpaceDroid.png)
 
 ## Animation and Visuals
 
@@ -261,7 +261,7 @@ energy rays that stop at the first obstacle hit. The beam stays on the screen
 for a short while and anything that runs into it will also get destroyed. This
 makes the shooting feel a bit more satisfying since the aiming does not need to
 be as precise.
-[Space Droid screenshot](/Screenshots/movement-physics/Spaceship.png)
+[Spaceship Collider](Screenshots/Spaceship.png)
 
 ### Randomness
 From the Juice It or Lose it video, I followed the tips and added randomness to
