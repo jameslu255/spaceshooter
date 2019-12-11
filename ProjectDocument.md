@@ -170,7 +170,7 @@ To make transitions between the start menu, gameplay, and game over menu more sm
 
 **Keyboard**
 
-We decided to follow classic input configuration for flash games by keeping controls very simple. Input for ship movement is handled by `GetAxis()` which takes in horizontal and vertical axes  in [PlayerController.cs](https://github.com/jameslu255/spaceshooter/blob/master/Assets/scripts/Controllers/PlayerController.cs), and is defaulted to WASD and arrow keys in Unity. We intend to have the primary keys as WASD, however the arrow keys can also be used for movement as well. WASD are the primary keys for movement to allow for easy access to the Pause Menu by clicking Escape. GetButtonDown() was used to retrieve user input for Escape. We wanted gamers to have easy access to the pause button in case they have to suddenly pause.  
+We decided to follow classic input configuration for flash games by keeping controls very simple. Input for ship movement is handled by `GetAxis()` which takes in horizontal and vertical axes  in [PlayerController.cs](https://github.com/jameslu255/spaceshooter/blob/master/Assets/scripts/Controllers/PlayerController.cs), and is defaulted to WASD and arrow keys in Unity. We intend to have the primary keys as WASD, however the arrow keys can also be used for movement as well. WASD are the primary keys for movement to allow for easy access to the Pause Menu by clicking Escape. `GetButtonDown()` was used to retrieve user input for Escape. We wanted gamers to have easy access to the pause button in case they have to suddenly pause.  
 
 **Mouse Clicks**
 
