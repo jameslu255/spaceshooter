@@ -140,7 +140,7 @@ Mouse clicks are used to select buttons from the Start and Pause menus. The alph
 
 **Add an entry for each platform or input style your project supports.**
 
-## Game Logic (James Lu)
+## Game Logic - James Lu
 
 ### Scenes
 Currently the game has states either “Playing” mode or “Screen Mode”. Playing mode is when the game is officially loaded and you have to pilot your ship to survive. These are managed using `UnityEngine.SceneManagement` and using `SceneManager` to change the scenes that we are currently on. `SceneManager` is called within many functions such as `MainMenuController.cs` (which controls what the Main menu, Victory Screen, and End Screen does). It is also found within the `LevelController.cs` because we need to transition to the victory screen when the game is over.
@@ -168,7 +168,7 @@ Values that we have to keep track of throughout the game is in GameController. W
 
 **Document the sound style.** 
 
-## Gameplay Testing (James Lu)
+## Gameplay Testing - James Lu
 
 I tested 10 people. I tested people while the game was still incomplete so that I could gauge what else needed to be added to the game. 
 Link to tests: https://docs.google.com/document/d/1bLgjpzBqRAew4YXp0Nd_95yhk4PBUHUfbX_L67Xw-to/edit?usp=sharing
