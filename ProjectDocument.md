@@ -35,41 +35,41 @@ You should replay any **bold text** with your relevant information. Liberally us
 
 ## Movement/Physics - Eric Lee
 ### Movement
-Since Space Evaders is a 3D game, movement happens in the x, y, and z axes. The
-y-axis goes in/out of the page and game objects must appear to move forward on
-this axis (Asteroids and space droids cannot move away from the spaceship).
-Horizontal and vertical movement is in the x and z axes respectively.
+Movement happens in the x, y, and z axes. The y-axis goes in/out of the page and
+game objects always appear to move forward on this axis (Asteroids and space
+droids cannot move away from the spaceship). Horizontal and vertical movement is
+in the x and z axes.
 
 Movement for all game entities must be within boxed boundary regions that are
-predefined inside the Unity editor. The spaceship must have a smaller movement
-boundary region than that of other game entities. This ensures that it is always
+predefined inside the Unity editor. The spaceship has a smaller movement
+boundary region than that of other game entities which ensures that it is always
 possible for other game entities to collide with the spaceship and also provides
 the feeling of a larger game space than what the screen shows.  
 [Spawn Position Generation Method](https://github.com/jameslu255/spaceshooter/blob/45a5b6a434f77417f42de14c3975bb7242047063/Assets/scripts/Controllers/LevelController.cs#L75-L90)
 
 The spaceship only moves in the x and z axes, but it appears to move at a
 constant speed in y-axis due to the background star animation. Spaceship
-movement is not instanteous -- a constant force is added to the spaceship which
-results in a constant acceleration. It also means that the acceleration is
+movement is not instantaneous -- a constant force is applied to the spaceship
+which results in a constant acceleration. It also means that the acceleration is
 dependent on the spaceships' mass. Upon hitting the spaceship boundary, the
 spaceship stops moving. The spaceship is purposely allowed to be cut off
 slightly by the screen so that it can fire at asteroids at the very edge of the
 boundary.  
 [Spaceship Movement Method](https://github.com/jameslu255/spaceshooter/blob/45a5b6a434f77417f42de14c3975bb7242047063/Assets/scripts/Controllers/PlayerController.cs#L32-L40), [Spaceship Boundary Check Method](https://github.com/jameslu255/spaceshooter/blob/45a5b6a434f77417f42de14c3975bb7242047063/Assets/scripts/Controllers/PlayerController.cs#L65-L84)
 
-Asteroids move in the y-axis at a random speed and do not move in the x and z
-axes. They also rotate as they move. Asteroids ignore collisions with the
-boundaries. [Ignore Boundaries Method](https://github.com/jameslu255/spaceshooter/blob/45a5b6a434f77417f42de14c3975bb7242047063/Assets/scripts/Controllers/AsteroidController.cs#L18-L23)
+Asteroids move in the y-axis at a random speed, do not move in the x and z axes,
+and rotate as they move. Asteroids ignore collisions with the boundaries.  
+[Ignore Boundaries
+Method](https://github.com/jameslu255/spaceshooter/blob/45a5b6a434f77417f42de14c3975bb7242047063/Assets/scripts/Controllers/AsteroidController.cs#L18-L23)
 
-Space Droids are similar to the asteroids because they also move in the y-axis
-at a random speed. However, Space Droids are spawned with a random movement
-script that controls how they move in the x and z axes. For all of these
-movement scripts, the direction of the movement reverses when it hits the
-boundary. This means that Space Droids will stay on the screen until they pass
-by or are destroyed by the spaceship. Furthermore, the scripts implement
-movement in the x and z axes that do not follow the physics system, but instead
-uses direct translation to move the Space Droid. All other game entities use the
-physics system to control movement. ( `DroidController`
+Space Droids also move in the y-axis at a random speed, but are also spawned
+with a random movement script that controls how they move in the x and z axes.
+For all of these movement scripts, the movement direction reverses when it hits
+the boundary, which ensures that the Space Droids will stay on the screen until
+they pass by or are destroyed by the spaceship. Furthermore, the scripts
+implement movement in the x and z axes that do not follow the physics system,
+but instead uses direct translation to move the Space Droid. All other game
+entities use the physics system to control movement. ( `DroidController`
 [link](https://github.com/jameslu255/spaceshooter/blob/master/Assets/scripts/Controllers/DroidController.cs))
 
 The seven movement scripts in Assets/Scripts/Movement are derived from a `MovementBase` ([link](https://github.com/jameslu255/spaceshooter/blob/master/Assets/scripts/Movement/MovementBase.cs)) abstract class:
@@ -97,8 +97,9 @@ The seven movement scripts in Assets/Scripts/Movement are derived from a `Moveme
 
 ### Physics
 Space Evaders leverages Unity's built-in physics system to control collisions
-and movement. The game does use the standard physics model. Collisions are
-handled within the Controller classes and are automatically detected by Unity.
+and movement. The game uses the standard physics model by attaching a Rigidbody
+component to all spawned game objects. Collisions are handled within the
+Controller classes and are automatically detected by Unity through colliders.
 CapsuleColliders were used for the spaceship, asteroids, and space droids, while
 BoxColliders were used for the boundaries. Asteroids and Space Droids use
 discrete collision detection while the spaceship uses continuous collision
@@ -110,7 +111,7 @@ Some physics conventions for the game are:
 3. All game entities are not kinematic.
 4. Non-boundary game entities must collide with each other. They cannot overlap.
 5. All non-spaceship game entities have a mass of 1, drag of 0, and angular drag
-of 0.
+   of 0.
 6. Game object movement must be handled by altering the `Rigidbody`
    * No altering the game object transform directly
 7. Spaceship speed is controlled by changing the mass and drag
@@ -223,15 +224,14 @@ Screenshots were chosen in order to give the best overview of the gameplay. I wa
 
 ## Game Feel - Eric Lee
 ### Ship Movement
-I adjusted the mass and drag values of the spaceship's Rigidbody as well as the
-amount of force applied to make moving the spaceship feel better. I tried to
-follow a tip from the "Why Does Celeste Feel So Good to Play? | Game Maker's
-Toolkit" video and make the spaceship fun and nice to move around even when
-there are no asteroids or other obstacles. Furthermore, I played around with the
-spaceship's ADSR envelope. As a heavy spaceship carrying and delivering a
-payload, it should not feel super snappy, but it should be responsive enough to
-dodge hazards as they come. The game does this by having an AR envelope instead
-of an ADSR envelope:
+I followed a tip from the "Why Does Celeste Feel So Good to Play? | Game Maker's
+Toolkit" video and tried to make the spaceship fun to move around even when
+there were no asteroids or other obstacles. To do this, I adjusted the mass and
+drag values of the spaceship as well as the amount of applied force.
+Additionally, I played around with the spaceship's ADSR envelope. As a heavy
+spaceship carrying and delivering a payload, I wanted it to not feel super
+snappy, but still be responsive enough to dodge hazards. With that in mind, I
+chose to use an AR envelope instead of an ADSR envelope:
 
 1. Medium acceleration and no speed cap
    This allows the ship to move across the screen quickly, but it doesn't allow
@@ -261,6 +261,7 @@ energy rays that stop at the first obstacle hit. The beam stays on the screen
 for a short while and anything that runs into it will also get destroyed. This
 makes the shooting feel a bit more satisfying since the aiming does not need to
 be as precise.
+[Space Droid screenshot](/Screenshots/movement-physics/Spaceship.png)
 
 ### Randomness
 From the Juice It or Lose it video, I followed the tips and added randomness to
