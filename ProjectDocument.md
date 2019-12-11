@@ -186,12 +186,30 @@ Values that we have to keep track of throughout the game is in GameController. W
 # Sub-Roles
 
 ## Audio
+[Start Screen Music](https://www.youtube.com/watch?v=Bok8nLviThg&list=PLobY7vO0pgVKn4FRDgwXk5FUSiGS8_jA8&index=9)
 
-**List your assets including their sources and licenses.**
+[Explosion Sound Effect](https://www.audioblocks.com/royalty-free-audio/sound-effects/explosion)
 
-**Describe the implementation of your audio system.**
+[Laser Sound Effect](https://www.zapsplat.com/sound-effect-category/lasers-and-weapons/)
 
-**Document the sound style.** 
+[Super Laser Sound Effect](https://www.zapsplat.com/sound-effect-category/lasers-and-weapons/)
+
+[Game Over Music](https://www.youtube.com/watch?v=br3OzOrARh4)
+
+[Victory Screen Music](https://www.youtube.com/watch?v=vX1xq4Ud2z8&list=PLobY7vO0pgVKn4FRDgwXk5FUSiGS8_jA8&index=1)
+
+### Main Menu
+A simple, retro soundtrack is played as the main menu is loaded. The `PlaySoundOnStart.cs` script starts the audio clips as the scene “Start” is loaded.
+
+### Gameplay
+The main background music is loaded within the `GameController.cs` as the scene is loaded in. It features an adventurous type of soundtrack fit to go with the space theme. Any time the player collides with an asteroid/enemy ship, the OnTriggerEnter() function within the `PlayerController.cs` plays an explosion sound. Both the primary laser and the secondary laser each have separate sounds called within the `AudioScript.cs` and the `AudioScript2ndary.cs`.
+
+### Victory Screen
+When the player finishes the game through without dying, a victory screen is displayed with several options and an upbeat, retro soundtrack in the background. The `PlaySoundOnStart` script is used here.
+
+### Game Over
+A retro, 8-bit type of soundtrack is played when the “End” scene is loaded. Here again, the `PlaySoundOnStart` script is used to call the sound clip.
+
 
 ## Gameplay Testing - James Lu
 
