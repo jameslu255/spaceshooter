@@ -203,10 +203,11 @@ Link to the trailer:
  
 Link to presskit: Space Evaders Presskit
 
-
 **Describe how you showcased your work. How did you choose what to show in the trailer? Why did you choose your screenshots?**
 
+When creating my trailer, I had a few key points I wanted to accomplish. I wanted to start off the trailer by briefly explaining the story behind the game and how the main protagonists (the spacecraft and the crew on board) got to where they were. I also wanted to include gameplay footage to give the audience a taste of the game. To conclude my trailer, I wanted to end with a call to action to get the audience excited about the game.  
 
+Screenshots were chosen in order to give the best overview of the gameplay. I wanted to give viewers a glimpse of the capabilities of the spaceship’s firepower as well as damage that can occur from enemy droids or asteroids.
 
 ## Game Feel - Eric Lee
 ### Ship Movement
