@@ -135,17 +135,21 @@ Examples:
 
 
 **Keyboard**
+
 We decided to follow classic input configuration for flash games by keeping controls very simple. Input for ship movement is handled by GetAxis() which takes in horizontal and vertical axes  in PlayerController.cs, and is defaulted to WASD and arrow keys in Unity. We intend to have the primary keys as WASD, however the arrow keys can also be used for movement as well. WASD are the primary keys for movement to allow for easy access to the Pause Menu by clicking Escape. GetButtonDown()was used to retrieve user input for Escape. We wanted gamers to have easy access to the pause button in case they have to suddenly pause.  
 
 **Mouse Clicks**
+
 Mouse clicks are used to select buttons from the Start and Pause menus. Pause menu buttons were handled by attaching methods from PauseMenu.cs to the buttons’ onClick() event. The alpha levels of the menu items were edited so that buttons become darker when the mouse hovers over them and gets even darker when a button is selected. This was implemented to make navigation easier and to make the buttons appear more responsive. We hoped to improve game feel by reaffirming gamer’s intent to choosing a button.  The size of buttons was also stressed and greatly depends on the importance of buttons. The Resume button in the pause menu is larger than the Menu and Quit buttons so gamers can easily navigate back to the action of the game. Left-click/Alt is utilized to fire a regular beam and right click is utilized for the special beam. Despite Space being a classic key for firing projectiles in games, we opted to go with left-click since we have a right-click for the special beam and wanted to keep things uniform. Input for the beams are handled in MultiShooter.cs using GetButtonDown() with Fire1 and Fire2 as arguments. 
 
 
 **Mouse Movement**
+
 Mouse movement is another form of input within Space Evaders. When firing the special beam with right-click, gamers are able to use their mouse to control the beam direction. This was implemented in MultiShooter.cs. Gamers can wiggle their mouse left and right in order to create a wavy beam for extra destruction. Initially, the special beam just had a slightly longer duration than the regular beam, but we chose to make the special beam direction controllable by the mouse to add more juice to the game. We made the special beam controllable in hopes of adding satisfaction to the game through the capability to destroy multiple asteroids and droids with a single beam.
 
 
 **Add an entry for each platform or input style your project supports.**
+
 Currently, our game is only supported by keyboard controls and mouse. However, we hope to add PS4/Xbox controller support in a future release. 
 
 ## Game Logic - James Lu
