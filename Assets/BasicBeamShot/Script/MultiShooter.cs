@@ -40,7 +40,7 @@ public class MultiShooter : MonoBehaviour
     {
         GameObject Bullet;
         timer += Time.deltaTime;
-        //create BasicBeamShot
+        // Create BasicBeamShot.
         if (Input.GetButtonDown("Fire1") && (timer > nextFire) && isFiring == false)
         {
             nextFire = timer + 1;
@@ -56,14 +56,14 @@ public class MultiShooter : MonoBehaviour
             wav.GetComponent<BeamWave>().col = this.GetComponent<BeamParam>().BeamColor;
 
         }
-        //create GeroBeam
+        // Create GeroBeam.
         if (Input.GetButtonDown("Fire2") && laserPowerUp > 0 && isFiring == false)
         {
             var playerMesh = GameObject.Find("Player").GetComponent<MeshRenderer>();
             playerMesh.material.SetColor("_Color", Color.white);
             secondaryFired = true;
             laserTimer = 0;
-            //laserPowerUp--;
+            // laserPowerUp--;
             isFiring = true;
             GameObject wav = (GameObject)Instantiate(Wave, this.transform.position, Quaternion.Euler(new Vector3(90, 0, 0)));
             wav.transform.Rotate(Vector3.left, 90.0f);
