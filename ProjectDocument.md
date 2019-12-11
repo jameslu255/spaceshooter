@@ -29,9 +29,22 @@ Here is an example:
 
 You should replay any **bold text** with your relevant information. Liberally use the template when necessary and appropriate.
 
-## User Interface
+## User Interface - Mit Tank
+### Main Menu
+Our initial design of Space Evaders was close to that of Space Invaders, with its classic retro feel. The menu includes an arcade-y soundtrack, coupled with a sci-fi influenced font and a space-themed background. The buttons either direct the player to the game with “Play,” or exit the game with “Quit.” Each button gets highlighted when the mouse is over it. 
 
-**Describe your user interface and how it relates to gameplay. This can be done via the template.**
+### Gameplay 
+The game interface includes a ship moving through space, a scoreboard, and a health bar above it. The ships movement is indicated by the stars, asteroids, and enemy ships flying past it. As the ship navigates the area, any collisions with asteroids or enemy ships causes the health bar to shrink. Any asteroids or ships destroyed by the player (with his/her two different laser attacks) causes 10 points to be added to the scoreboard. Both the scoreboard and the health bar have their own respective controller scripts. 
+
+### Pause (By Brian)
+The escape button allows the player to pause the game, opening a menu of choices. The choices are displayed over a dimmed game, allowing the player to know the exact game state as it was paused. The player can then resume, go back to the menu, or exit the game by choosing one of the buttons. The PauseMenu script controls this. 
+ 
+### Victory Screen (By James)
+The victory screen is shown when the player gets to the end of the game without dying. It has the option to play again or quit the game. On this screen, a victory soundtrack is played.
+
+### Game Over
+As the player loses all of their lives, a game over screen is shown. A retro, melancholic  soundtrack, one that resembles those that are played towards the end of old games, is played with a space background and the words “GAME OVER,” displayed. 
+
 
 ## Movement/Physics - Eric Lee
 ### Movement
