@@ -2,11 +2,16 @@
 
 ## Summary ##
 
-**A paragraph-length pitch for your game.**
+Space Evaders is a twist on the classic space invader games. In our version, the edge of the galaxy has been overrun by space droids and asteroids, and they are destroying whatever they can in the universe. As the spaceship’s pilot, you will be flying through a desolate space scene,  with only meteors and enemy droids for company. 
 
 ## Gameplay explanation ##
 
-**In this section, explain how the game should be played. Treat this as a manual within a game. It is encouraged to explain the button mappings and the most optimal gameplay strategy.**
+You move your character using W,A,S,D.
+Fire your primary laser using Mouse1.
+In the middle of the game, a blue orb power up will spawn. If you touch it, you will gain access to one Super Laser Charge.
+Use your superlaser charge by pressing Mouse2.
+Aim your superlaser by moving your mouse in the direction of the asteroids.
+Survive till the end and win!
 
 
 
@@ -135,9 +140,23 @@ Mouse clicks are used to select buttons from the Start and Pause menus. The alph
 
 **Add an entry for each platform or input style your project supports.**
 
-## Game Logic
+## Game Logic (James Lu)
 
-**Document what game states and game data you managed and what design patterns you used to complete your task.**
+### Scenes
+Currently the game has states either “Playing” mode or “Screen Mode”. Playing mode is when the game is officially loaded and you have to pilot your ship to survive. These are managed using `UnityEngine.SceneManagement` and using `SceneManager` to change the scenes that we are currently on. `SceneManager` is called within many functions such as `MainMenuController.cs` (which controls what the Main menu, Victory Screen, and End Screen does). It is also found within the `LevelController.cs` because we need to transition to the victory screen when the game is over.
+
+### Waves
+I decided for the game to have a linear play through with only a set number of waves. This is because by having a limited number of waves we can create additional levels later rather than making the game endless. However, the more waves you complete, the game will get more challenging. On wave 4 we start adding Droids that move around erratically. On wave 8 we start increasing the number of enemies. Our final wave is technically easier than wave 8 and this was a design choice because the music we are playing in the background starts to decrease in intensity, thus we decrease the intensity of the game as well.
+
+### Firing Delay
+I also decided to have a limit on the firing of Mouse1. Originally, the player could spam the fire and have almost no challenge. A delay using Timers was implemented in order to make the player make careful decisions when to fire their laser. I also made it so that the laser will always one-shot the enemy. This makes it more rewarding because not only is there a long delay, but if you use it properly, you will 100% annihilate your foe.
+
+### Power Ups
+I decided to have a power up system to enhance your player. This was done by creating an instance of a “powerUp” prefab that will move along with the enemies. Once the player comes in contact with the prefab, it will destroy the prefab and add a charge to the “laserPowerUp” in the MultiShooter.cs script. This script controls how the player input is determined so it makes sense to keep track of the number of superlaser charges here. If the super laser charges are 0, then you cannot use your Mouse2.
+
+### Values that are kept track of
+Values that we have to keep track of throughout the game is in GameController. We have to keep track of how many laserPowerUps we have, keep track of whether or not the player is currently firing their laser so that other moves should be disabled. We also have to keep track of the score in the gamecontroller.
+
 
 # Sub-Roles
 
@@ -149,11 +168,27 @@ Mouse clicks are used to select buttons from the Start and Pause menus. The alph
 
 **Document the sound style.** 
 
-## Gameplay Testing
+## Gameplay Testing (James Lu)
 
-**Add a link to the full results of your gameplay tests.**
+I tested 10 people. I tested people while the game was still incomplete so that I could gauge what else needed to be added to the game. 
+Link to tests: https://docs.google.com/document/d/1bLgjpzBqRAew4YXp0Nd_95yhk4PBUHUfbX_L67Xw-to/edit?usp=sharing
 
-**Summarize the key findings from your gameplay tests.**
+From the early results, we learned that we need to have an ending to the game because some testers did not like how the game dragged on forever. There was no sense of accomplishment when the game will eventually lead to them losing. This was fixed by adding in Gameover and Victory screens and loading them using `SceneManager`.
+
+Some other tests told us that the player controls were stiff. This was because our early designs of the game made the player’s ship take time to move and thus made the game feel like the player was lagging. We fixed this by making the ship move almost instantaneously and also adding ship rotations when the player strafes to the left or right.
+
+Other testers told us that the input controls were weird because the primary laser was tied to spacebar while it needed to be aimed with the mouse. To fix this, we made the laser move in a straight line and then changed the input to Mouse1. 
+
+Yet another tester complained about how our loading screens had no music. I decided to add music to the Start and End Screens. This was done using an Audio Source and linking an audio clip and having the Audio Source play music using `AudioSource.Play()`.
+
+### Other things I added when testing on my own:
+* I decided to add the power ups system when testing the game mid production. 
+* I also added sound effects to when power-ups were collected
+* I also changed the color of the model of the player when a powerup is collected so that it is easier to identify. This was done by setting the “MeshRenderer” to blue. It was set to “White” (which means clear all colors) when the powerup was used.
+* I also added Screen shaking because when the player was hit by a meteor or enemy, the player took damage but the player took it like a rock and didn’t move. The shake makes it seem more impactful.
+* I felt that the background of the game was pretty drab. I decided to add some planet models in the background to make the game have more life to it.
+* I also added a “Danger” sound when the player got low health so that it is easier for the player to detect that they are in danger.
+
 
 ## Narrative Design
 
