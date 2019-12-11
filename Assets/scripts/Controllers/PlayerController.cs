@@ -21,8 +21,8 @@ public class PlayerController : MonoBehaviour
     private HealthBarController health;
     private GameController gameController;
 
-    //Macros for difficulty: 20, 25 or 35 damage
-    //Ship with max health of 100 can take 5, 4 or 3 hits before exploding
+    // Macros for difficulty: 20, 25 or 35 damage.
+    // Ship with max health of 100 can take 5, 4 or 3 hits before exploding.
 
     void Start()
     {
@@ -59,7 +59,7 @@ public class PlayerController : MonoBehaviour
         if (other.tag == "PlayerBoundary")
         {
             Rb.velocity = Vector3.zero;
-            //Debug.Log(Time.deltaTime);
+            // Debug.Log(Time.deltaTime);
         }
         else if (other.tag == "Enemy")
         {
