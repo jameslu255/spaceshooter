@@ -320,7 +320,7 @@ energy rays that stop at the first obstacle hit. The beam stays on the screen
 for a short while and anything that runs into it will also get destroyed. This
 makes the shooting feel a bit more satisfying since the aiming does not need to
 be as precise.  
-[Spaceship Collider](Screenshots/Spaceship.png)
+[Spaceship Collider](Screenshots/movement-physics/Spaceship.png)
 
 ### Randomness
 From the Juice It or Lose it video, I followed the tips and added randomness to
