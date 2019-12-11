@@ -198,6 +198,12 @@ Yet another tester complained about how our loading screens had no music. I deci
 
 **Include links to your presskit materials and trailer.**
 
+Link to the trailer:
+ https://youtu.be/xR4AZfiPW2U
+ 
+Link to presskit: Space Evaders Presskit
+
+
 **Describe how you showcased your work. How did you choose what to show in the trailer? Why did you choose your screenshots?**
 
 
