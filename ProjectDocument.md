@@ -331,19 +331,22 @@ spaceship carrying and delivering a payload, I wanted it to not feel super
 snappy, but still be responsive enough to dodge hazards. With that in mind, I
 chose to use an AR envelope instead of an ADSR envelope:
 
-1. Medium acceleration and no speed cap This allows the ship to move across the
-   screen quickly, but it doesn't allow the ship to make rapid movements to
-   dodge. The acceleration forces the player to react early to avoid obstacles.
-   The lack of speed cap helps the ship get across the screen as quickly as
-   possible and makes the game feel more responsive and enjoyable to play. This
-   is controlled through the `AddForce()` method.
-2. Very large deceleration (Short release) I gave the ship a very large
-   drag,which causes it to stop very quickly. This helps the game feel a more
-   fun and responsive since the spaceship can change directions more quickly and
-   also prevents the spaceship from drifiting into obstacles. To avoid making
-   the stop not feel jerky, I implemented ship rotation on turns so that the
-   ship would appear to still be moving even when it has already stopped moving
-   in the XZ coordinate plane.
+1. Medium acceleration and no speed cap.  
+   This kind of attack curve allows the spaceship to move across the screen
+   quickly and smoothly. Tapping the movement keys barely moves the ship, which
+   forces the player to react early to avoid obstacles. The lack of speed cap
+   helps the ship get across the screen as quickly as possible and makes the
+   game feel more responsive and enjoyable to play. The `AddForce()` method is
+   used to apply the acceleration. Furthermore, I chose to use the `Impulse`
+   Force Mode parameter since it made the ship feel a lot snappier and gives the
+   player a greater sense of control over the ship.
+2. Very large deceleration (Short release)  
+   I gave the ship a very large drag,which causes it to stop very quickly. This
+   helps the game feel a more fun and responsive since the spaceship can change
+   directions more quickly and also prevents the spaceship from drifiting into
+   obstacles. To avoid making the stop not feel jerky, I implemented ship
+   rotation so that the ship would appear to still be moving even when it has
+   already stopped moving position wise.
 
 ### Collision Leniency
 I also adjusted the colliders to not match the prefab shape very closely. In the
