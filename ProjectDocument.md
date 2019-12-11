@@ -136,11 +136,32 @@ Examples:
 * [SpawnBoundary screenshot](Screenshots/movement-physics/SpawnBoundary.png)
 * [Space Droid screenshot](Screenshots/movement-physics/SpaceDroid.png)
 
-## Animation and Visuals
+## Animation and Visuals - Keaton Elliott
+### Assets:
+[Spaceship](https://assetstore.unity.com/packages/3d/vehicles/space/free-sf-fighter-11711)
 
-**List your assets including their sources and licenses.**
+[Asteroids](https://assetstore.unity.com/packages/3d/environments/asteroids-pack-84988)
 
-**Describe how your work intersects with game feel, graphic design, and world-building. Include your visual style guide if one exists.**
+[Explosions](https://assetstore.unity.com/packages/vfx/particles/fire-explosions/fire-spell-effects-36825)
+
+[Scene Transition](https://assetstore.unity.com/packages/tools/particles-effects/simple-fade-scene-transition-system-81753)
+
+[Space Droids](https://assetstore.unity.com/packages/3d/vehicles/space/space-droid-32200)
+
+### Beam Firing Animation
+Because this game is supposed to be based on the classic space invaders arcade game, all visuals should be a similar feel, but more modern looking. We accomplished this using some simple additions to assets from the Unity asset store. The main firing mechanic of the ship is made more futuristic than the initial simple projectile from the original space invaders by changing into a beam weapon. The animation for this beam came with the asset when downloaded, but it fits in well with the rest of the scene. The secondary firing system uses the same asset, prolongs it and allows it to be aimed.
+
+### Movement Simulation
+Another animation that adds to the effect of flying through space is the random particle generation in the background to simulate passing by stars, galaxies, and anything else in space. Because the ship itself is not actually moving in the different it seems it should be, this particle system creates that sense that you are progressing through space, and actually moving. Also, the speed and randomness of the particles gives the movement a similar feel to moving through hyperspace. A very similar particle system is attached to the back of the spaceship asset, adding to the movement illusion and giving the ship itself a more lifelike appearance. This system uses one of the flame assets to give it the correct color and interaction with the environment. 
+
+### Player Visuals/Animations
+The ship itself is a complicated asset that we downloaded from the store. It has different aspects that you can activate and deactivate, including the boosters that come off the sides. This ship fits in with the general atmosphere of the game as it is a similar style to classic space invader games, if they were rendered in 3D space.
+
+### Collision Consequences
+Managing collisions between the invaders (in this case asteroids and space droids) and the ship itself needs to have the same weight to it as the classic game. For this reason, on every collision an explosion prefab is instantiated with a sound queue as well. As described in the game feel section, collisions with the player itself should have more weight to them, so we added a screen shake as well. To further emphasize this, the sound effect of this collision is a different, heavier impact than a shot collision. The explosion is another asset we got from the store itself, and it fits the feel of the game as it is very similar to many classic explosions in the sci fi genre.
+
+### Transitioning Between Scenes
+To make transitions between the start menu, gameplay, and game over menu more smooth, we used a simple scene transition asset from the store. This made it less jarring and more fluid when the player began playing the game, and helped the game over screen not appear so abrupt. It also helps the player actually understand that their health is fully depleted, by allowing them to see their player explode before transitioning to the end scene.
 
 ## Input - Brian Nguyen
 
@@ -158,7 +179,7 @@ Mouse clicks are used to select buttons from the Start and Pause menus. Pause me
 
 **Mouse Movement**
 
-Mouse movement is another form of input within Space Evaders. When firing the special beam with right-click, gamers are able to use their mouse to control the beam direction. This was implemented in [MultiShooter.cs](https://github.com/jameslu255/spaceshooter/blob/master/Assets/BasicBeamShot/Script/MultiShooter.cs). Gamers can wiggle their mouse left and right in order to create a wavy beam for extra destruction. Initially, the special beam just had a slightly longer duration than the regular beam, but we chose to make the special beam direction controllable by the mouse to add more ["juice"](https://github.com/dr-jam/ECS189L/blob/master/Juice.md) to the game. We made the special beam controllable in hopes of adding satisfaction to the game through the capability to destroy multiple asteroids and droids with a single beam.
+Mouse movement is another form of input within Space Evaders. When firing the special beam with right-click, gamers are able to use their mouse to control the beam direction. This was implemented in [MultiShooter.cs](https://github.com/jameslu255/spaceshooter/blob/master/Assets/BasicBeamShot/Script/MultiShooter.cs). Gamers can wiggle their mouse left and right in order to create a wavy beam for extra destruction. Initially, the special beam just had a slightly longer duration than the regular beam, but we chose to make the special beam direction controllable by the mouse to add more juice to the game. We made the special beam controllable in hopes of adding satisfaction to the game through the capability to destroy multiple asteroids and droids with a single beam.
 
 
 **Add an entry for each platform or input style your project supports.**
@@ -185,7 +206,7 @@ Values that we have to keep track of throughout the game is in GameController. W
 
 # Sub-Roles
 
-## Audio
+## Audio - Mit Tank
 [Start Screen Music](https://www.youtube.com/watch?v=Bok8nLviThg&list=PLobY7vO0pgVKn4FRDgwXk5FUSiGS8_jA8&index=9)
 
 [Explosion Sound Effect](https://www.audioblocks.com/royalty-free-audio/sound-effects/explosion)
